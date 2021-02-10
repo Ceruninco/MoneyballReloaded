@@ -19,7 +19,10 @@ import matplotlib
 import matplotlib.path as path
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-
+import seaborn as sns
+import chart_studio.plotly as py
+from plotly.offline import download_plotlyjs, init_notebook_mode,  plot
+from plotly.graph_objs import *
 
 Ad1 =  pd.read_csv('NBA_advanced_2019-2020.csv',delimiter = ',')
 Ad1.insert(2,'Year',2020)
@@ -33,6 +36,10 @@ Ad4.insert(2,'Year',2017)
 PlayerStats="MP"
 
 Ad = Ad1.append(Ad2).append(Ad3).append(Ad4)
+
+
+""" a function which computes a performance polygon for a specific player using three parameters
+ (Offensive Win Share, Defensive Win Share, Win Share)"""
 
 def performance_polygon(PlayerName):
     AdDisp=Ad[Ad.Player.eq(PlayerName)]
@@ -85,15 +92,8 @@ def performance_polygon(PlayerName):
     plt.show()
 
 
-PlayerName='James Harden'
+PlayerName='LeBron James'
 performance_polygon(PlayerName)
-
-
-
-#kmeans = KMeans(n_clusters=2, random_state=0).fit(Ad)
-
-#AdDisp.plot(x="Year",y=PlayerStats,title=PlayerStats+" of "+PlayerName)
-
 
 
 def histogram_minutes_played_random_chosen_players():
@@ -115,3 +115,70 @@ Ad_MP_3P = Ad1[['MP','3P']]
 plt.scatter(Ad_MP_3P['MP'],Ad_MP_3P['3P'])
 plt.figure()
 """
+
+df = pd.read_csv('NBA_totals_2019-2020.csv')
+df[['FG%', '3P%', '2P%', 'FT%', 'eFG%']] = \
+df[['FG%', '3P%', '2P%', 'FT%', 'eFG%']].fillna(value=0)
+df['nPTS'] = df['PTS']/df['MP']
+df['nPF'] = df['PF']/df['MP']
+df['nTOV'] = df['TOV']/df['MP']
+df['nBLK'] = df['BLK']/df['MP']
+df['nSTL'] = df['STL']/df['MP']
+df['nAST'] = df['AST']/df['MP']
+reducedDS = df[['Player','nPTS','nPF','nTOV','nBLK','nSTL','nAST','FG%','3P%','2P%','FT%']]
+
+sns.set_context('poster')
+sns.set_color_codes()
+plot_kwds = {'alpha' : 0.25, 's' : 80, 'linewidths':0}
+plt.scatter(reducedDS['nPTS'], reducedDS['FT%'], c=None, **plot_kwds)
+frame = plt.gca()
+frame.axes.get_xaxis().set_visible(True)
+frame.axes.get_yaxis().set_visible(True)
+
+def plot_clusters(data, algorithm, args, kwds):
+    labels = algorithm(*args, **kwds).fit_predict(data)
+    palette = sns.color_palette('deep', np.unique(labels).max() + 1)
+    colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in labels]
+    plt.scatter(data[data.columns[0]], data[data.columns[1]], c=colors, **plot_kwds)
+    frame = plt.gca()
+    frame.axes.get_xaxis().set_visible(True)
+    frame.axes.get_yaxis().set_visible(True)
+    plt.title('Clusters found by {}'.format(str(algorithm.__name__)), fontsize=24)
+    
+test = reducedDS.loc[:, reducedDS.columns != 'Player']
+plot_clusters(test[['nPTS','nAST']], cluster.DBSCAN, (), {'eps':0.01})
+test[test.columns[0]]
+
+
+init_notebook_mode()
+df = pd.read_csv('alpha_shape.csv')
+df.head()
+
+point = dict(
+    mode = "markers",
+    name = "y",
+    type = "scatter3d",
+    x = Ad1['DWS'], y = Ad1['DRB%'], z = Ad1['DBPM'], text=Ad1["Player"],
+    marker = dict( size=2, color="rgb(23, 190, 207)" )
+)
+
+mesh = dict(
+    alphahull = 50,
+    name = "y",
+    opacity = 0.1,
+    type = "mesh3d",
+    x = Ad1['DWS'], y = Ad1['DRB%'], z = Ad1['DBPM']
+)
+layout = dict(
+    title = '3d representation',
+    scene = dict(
+        xaxis = dict( zeroline=False, title ="DWS" ),
+        yaxis = dict( zeroline=False, title = "DRB%" ),
+        zaxis = dict( zeroline=False, title = "DBPM" ),
+    )
+)
+
+fig = dict( data=[point, mesh],  layout=layout )
+
+plot(fig,filename='clustering 3D')
+
