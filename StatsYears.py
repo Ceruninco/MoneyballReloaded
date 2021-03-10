@@ -103,10 +103,10 @@ def performance_polygon_vs_player(*PlayerName):
         
         # Player = AdDisp[AdDisp.Year.eq(2020)]
     
-        properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB%", "PTS", "3PA", ]
+        properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB", "PTS", "3PA", ]
         values = np.random.uniform(5,9,len(properties))
     
-        values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB%"], Player["PTS"], Player["3PA"]]
+        values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB"], Player["PTS"], Player["3PA"]]
         #values2 = [Player2['OWS'], Player2['DWS'], Player2['AST'], Player2["TS%"], Player2["TRB%"], Player2["PTS"], Player2["3PA"]]
         matplotlib.rc('axes', facecolor = 'white')
     
@@ -146,19 +146,20 @@ def performance_polygon_vs_player(*PlayerName):
         plt.text(angle_rad, 10.75, properties[i], size=14,
                  horizontalalignment=ha, verticalalignment="center")
 
-    plt.title("Statistics of "+PlayerName[0]+" ("+colors[0]+") vs "+PlayerName[1]+" ("+colors[1]+")")
+    plt.title("Statistics of "+PlayerName[0]+" ("+colors[0]+") vs "+PlayerName[1]+" ("+colors[1]+")", pad = 50)
     plt.show()
 
 
 
 PlayerName='LeBron James'
-PlayerName5= "Kevin Durant"
+#PlayerName5= "Buddy Hield"
+PlayerName6="Stephen Curry"
 #performance_polygon(PlayerName)
 #PlayerName2 = "Aaron Brooks"
 #PlayerName3 = "Brandon Knight"
 #PlayerName4 = "Jamal Crawford"
 
-performance_polygon_vs_player(PlayerName, PlayerName5)
+performance_polygon_vs_player(PlayerName, PlayerName6)
 
 
 def histogram_minutes_played_random_chosen_players():
