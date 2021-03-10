@@ -148,6 +148,8 @@ final_advanced_scaled = final_advanced_scaled / ( final_advanced_scaled.max() - 
 # on fusionne les stats avancées et les stats de base
 final = pd.merge(final_advanced_scaled, avg_stats_36_minutes_scaled, on="Player")
 
+final.to_csv("./players_stats.csv")
+
 
 
 

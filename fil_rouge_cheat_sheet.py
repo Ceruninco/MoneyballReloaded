@@ -68,15 +68,26 @@ df.head()
 
 df_2020[df_2020["Player"] == "Kyle Alexander"]
 
+# keep index while for-loop iterating
+
+for index, item in enumerate(array):
+	print(index)
+	print(item)
+
+
+# get the number of rows from df
+
+len(df.index)
 
 
 
  #########################################################
- # MACHINE LEARNING WITH SKLEARN #########################
+ ############# MACHINE LEARNING WITH SKLEARN #############
  #########################################################
 
 
 # to build a decision tree regressor with sklearn
+# without max_leaves parameter it stops until theres is only one x(i) per leaves
 
 from sklearn.tree import DecisionTreeRegressor  
 #specify the model. 
@@ -94,10 +105,70 @@ predictions = model.predict(X)
 from sklearn.model_selection import train_test_split
 train_X, val_X, train_y, val_y = train_test_split(X, y, random_state = 0)
 
-# calculate the MSE
+# calculate the Mean Square Error
 
 from sklearn.metrics import mean_absolute_error
-mean_absolute_error(y, predicted_home_prices)
+mean_absolute_error(y, predicted)
 
-#
+# calculate the Mean Absolute Error
+
+from sklearn.metrics import mean_absolute_error
+val_mae = mean_absolute_error(val_y, val_predictions)
+
+# dict omprehension
+
+candidate_max_leaf_nodes = [5, 25, 50, 100, 250, 500]
+scores = {leaf_size: get_mae(leaf_size, train_X, val_X, train_y, val_y) for leaf_size in candidate_max_leaf_nodes}
+best_model = min(scores, key=scores.get)
+
+# use random forest
+
+from sklearn.ensemble import RandomForestRegressor
+
+forest_model = RandomForestRegressor(random_state=1)
+forest_model.fit(train_X, train_y)
+melb_preds = forest_model.predict(val_X)
+
+
+
+# Get names of columns with missing values
+cols_with_missing = [col for col in X_train.columns if X_train[col].isnull().any()]
+
+
+# get the number of missing value per columns
+
+X.isnull().sum()
+
+# get the total number of missing value in the dataset
+
+X.isnull().sum().sum()
+
+# nb of rows with at least a na value
+
+sum([True for idx,row in X_full.iterrows() if any(row.isnull())])
+
+
+# impute missing values
+
+from sklearn.impute import SimpleImputer
+
+my_imputer = SimpleImputer()
+# first we fit
+imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
+# then we apply we the fittest value
+imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
+
+
+
+# iterate over series
+
+for index, elem in s.items()
+
+
+# to replace categorical data with binary valie (one extra columns for each possible value)
+
+X = pd.get_dummies(X)
+
+
+
 
