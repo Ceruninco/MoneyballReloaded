@@ -35,6 +35,8 @@ Ad4.insert(2,'Year',2017)
 
 PlayerStats="MP"
 
+NormalizeData = pd.read_csv("csv/players_stats.csv", delimiter =",");
+
 Ad = Ad1.append(Ad2).append(Ad3).append(Ad4)
 
 
@@ -42,14 +44,14 @@ Ad = Ad1.append(Ad2).append(Ad3).append(Ad4)
  (Offensive Win Share, Defensive Win Share, Win Share)"""
 
 def performance_polygon(PlayerName):
-    AdDisp=Ad[Ad.Player.eq(PlayerName)]
+    Player=10*NormalizeData[NormalizeData.Player.eq(PlayerName)]
 
-    Player = AdDisp[AdDisp.Year.eq(2020)]
+    # Player = AdDisp[AdDisp.Year.eq(2020)]
 
-    properties = ['Offensive Win share', 'Defensive win share', 'Win share']
+    properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB%", "PTS", "3PA", ]
     values = np.random.uniform(5,9,len(properties))
 
-    values = [Player['OWS'], Player['DWS'], Player['WS']]
+    values = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB%"], Player["PTS"], Player["3PA"]]
     matplotlib.rc('axes', facecolor = 'white')
 
     fig = plt.figure(figsize=(10,8), facecolor='white')
@@ -73,13 +75,14 @@ def performance_polygon(PlayerName):
 
     plt.scatter(points[:,0],points[:,1], linewidth=2,
                 s=50, color='white', edgecolor='black', zorder=10)
-
+    """
     maxi = max([Player.iloc[0,19]+1, Player.iloc[0,20]+1, Player.iloc[0,21]+1])
     if maxi < 10:
         plt.ylim(0,10)
     else:
         plt.ylim(0,maxi)
-
+        """
+    plt.ylim(0,10)
     for i in range(len(properties)):
         angle_rad = i/float(len(properties))*2*np.pi
         angle_deg = i/float(len(properties))*360
@@ -90,17 +93,79 @@ def performance_polygon(PlayerName):
 
     plt.title("Statistics of "+PlayerName)
     plt.show()
+    
+def performance_polygon_vs_player(*PlayerName):
+    colors = ["blue", "red", "green", "orange", "brown"]
+    fig = plt.figure(figsize=(10,8), facecolor='white')
+    for i in range (0,len(PlayerName)):
+        Player=10*NormalizeData[NormalizeData.Player.eq(PlayerName[i])]
+        #Player2=10*NormalizeData[NormalizeData.Player.eq(PlayerName[1])]
+        
+        # Player = AdDisp[AdDisp.Year.eq(2020)]
+    
+        properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB%", "PTS", "3PA", ]
+        values = np.random.uniform(5,9,len(properties))
+    
+        values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB%"], Player["PTS"], Player["3PA"]]
+        #values2 = [Player2['OWS'], Player2['DWS'], Player2['AST'], Player2["TS%"], Player2["TRB%"], Player2["PTS"], Player2["3PA"]]
+        matplotlib.rc('axes', facecolor = 'white')
+    
+        
+    
+        axes = plt.subplot(111, polar=True)
+    
+        t = np.arange(0,2*np.pi,2*np.pi/len(properties))
+        plt.xticks(t, [])
+    
+        points = [(x,y) for x,y in zip(t,values1)]
+        points.append(points[0])
+        points = np.array(points)
+        codes = [path.Path.MOVETO,] + \
+                [path.Path.LINETO,]*(len(values) -1) + \
+                [ path.Path.CLOSEPOLY ]
+        _path = path.Path(points, codes)
+        _patch = patches.PathPatch(_path, fill=True, color=colors[i], linewidth=0, alpha=.2)
+        axes.add_patch(_patch)
+        _patch = patches.PathPatch(_path, fill=False, linewidth = 2)
+        axes.add_patch(_patch)
+    plt.scatter(points[:,0],points[:,1], linewidth=2,
+                s=50, color='white', edgecolor='black', zorder=10)
+    """
+    maxi = max([Player.iloc[0,19]+1, Player.iloc[0,20]+1, Player.iloc[0,21]+1])
+    if maxi < 10:
+        plt.ylim(0,10)
+    else:
+        plt.ylim(0,maxi)
+        """
+    plt.ylim(0,10)
+    for i in range(len(properties)):
+        angle_rad = i/float(len(properties))*2*np.pi
+        angle_deg = i/float(len(properties))*360
+        ha = "right"
+        if angle_rad < np.pi/2 or angle_rad > 3*np.pi/2: ha = "left"
+        plt.text(angle_rad, 10.75, properties[i], size=14,
+                 horizontalalignment=ha, verticalalignment="center")
+
+    plt.title("Statistics of "+PlayerName[0]+" ("+colors[0]+") vs "+PlayerName[1]+" ("+colors[1]+")")
+    plt.show()
+
 
 
 PlayerName='LeBron James'
-performance_polygon(PlayerName)
+PlayerName5= "Kevin Durant"
+#performance_polygon(PlayerName)
+#PlayerName2 = "Aaron Brooks"
+#PlayerName3 = "Brandon Knight"
+#PlayerName4 = "Jamal Crawford"
+
+performance_polygon_vs_player(PlayerName, PlayerName5)
 
 
 def histogram_minutes_played_random_chosen_players():
     shuffledData = utils.shuffle(Ad)
     sample = shuffledData[1:20]
     #sample.plot.bar(x='Player', y='G', rot=90)
-
+"""
 
 histogram_minutes_played_random_chosen_players()
 
@@ -109,12 +174,12 @@ Ad_G_MP = Ad1[['G','MP']]
 plt.scatter(Ad_G_MP['MP'],Ad_G_MP['G'])
 plt.figure()
 
-"""
+
 Ad_MP_3P = Ad1[['MP','3P']]
 #clustering = cluster.DBSCAN(eps=5, min_samples=10).fit_predict(Ad_MP_3P)
 plt.scatter(Ad_MP_3P['MP'],Ad_MP_3P['3P'])
 plt.figure()
-"""
+
 
 df = pd.read_csv('NBA_totals_2019-2020.csv')
 df[['FG%', '3P%', '2P%', 'FT%', 'eFG%']] = \
@@ -182,3 +247,4 @@ fig = dict( data=[point, mesh],  layout=layout )
 
 plot(fig,filename='clustering 3D')
 
+"""
