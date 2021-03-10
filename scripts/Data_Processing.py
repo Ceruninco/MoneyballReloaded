@@ -14,7 +14,7 @@ df_2017 = pd.read_csv(csv_files_location+'NBA_totals_2016-2017.csv')
 df_2018 = pd.read_csv(csv_files_location+'NBA_totals_2017-2018.csv')
 df_2019 = pd.read_csv(csv_files_location+'NBA_totals_2018-2019.csv')
 df_2020 = pd.read_csv(csv_files_location+'NBA_totals_2019-2020.csv')
-
+    
 # on enleve les accents et caractères spéciaux du nom des joueurs pour les grouper
 df_2016["Player"] = df_2016["Player"].apply(unidecode)
 df_2017["Player"] = df_2017["Player"].apply(unidecode)
@@ -23,7 +23,9 @@ df_2019["Player"] = df_2019["Player"].apply(unidecode)
 df_2020["Player"] = df_2020["Player"].apply(unidecode)
 
 
-# on recupere l'équipe finale de chaque joueur
+# on recupere l'équipe finale de chaque joueur de cette année
+# on fait d'une pierre deux coups en récuperant les noms et en filtrant les joueurs ayant pris leur retraite
+# avant la saison 2020
 team_and_player = df_2020[["Player", "Tm"]]
 team_and_player["final_team"] = team_and_player.groupby('Player')['Tm'].transform('last')
 team_and_player = team_and_player[["Player", "final_team"]]
@@ -130,7 +132,7 @@ agr = {'MP':['sum'],'G': ['sum'], 'PER':['sum'],'TS%':['sum'],'3PAr':['sum'],'TR
 agg_advanced =summed_ad.groupby(['Player']).agg(agr)
 
 
-# on enleve ceux qui ont joué moins de 100 matches
+# on enleve ceux qui ont joué moins de 100 matches => c'est pour cela qu'on a moins de joueurs à la fin!!!!
 agg_advanced = agg_advanced[agg_advanced["G"]['sum'] > 100 ]
 
 
@@ -150,6 +152,7 @@ final_advanced_scaled = final_advanced_scaled / ( final_advanced_scaled.max() - 
 # on fusionne les stats avancées, les stats de base et les noms des joueurs
 final = pd.merge(final_advanced_scaled, avg_stats_36_minutes_scaled, on="Player")
 final = pd.merge(team_and_player, final, on="Player")
+
 
 #export to csv
 final.to_csv("./players_stats.csv")
