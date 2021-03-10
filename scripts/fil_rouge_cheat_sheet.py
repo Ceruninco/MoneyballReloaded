@@ -13,6 +13,8 @@ final_advanced = final_advanced.drop(columns=["G"])
 final_advanced = pd.concat([final_advanced, games], axis=1)
 
 
+
+
 #Pour aggreger des données avec des fonctions différentes selon la colonne
 
 agr = {'MP':['sum'],'G': ['sum'], 'PER':['sum'],'TS%':['sum'],'3PAr':['sum'],'TRB%':['sum'],'USG%':['sum'], 'OWS':['sum'], 'DWS':['sum']}

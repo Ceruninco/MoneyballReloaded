@@ -20,87 +20,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-"""
-df = pd.read_csv('NBA_totals_2019-2020.csv')
 
 
-df[['FG%', '3P%', '2P%', 'FT%', 'eFG%']] = \
-df[['FG%', '3P%', '2P%', 'FT%', 'eFG%']].fillna(value=0)
-print(df)
-
-print(df[['PTS','PF','TOV','BLK','STL','AST']])
-
-df['nPTS'] = df['PTS']/df['MP']
-df['nPF'] = df['PF']/df['MP']
-df['nTOV'] = df['TOV']/df['MP']
-df['nBLK'] = df['BLK']/df['MP']
-df['nSTL'] = df['STL']/df['MP']
-df['nAST'] = df['AST']/df['MP']
-
-reducedDS = df[['Player','nPTS','nPF','nTOV','nBLK','nSTL','nAST','FG%','3P%','2P%','FT%']]
-
-print(reducedDS)
-%matplotlib inline
-sns.set_context('poster')
-sns.set_color_codes()
-plot_kwds = {'alpha' : 0.25, 's' : 80, 'linewidths':0}
-
-plt.scatter(reducedDS['nPTS'], reducedDS['FT%'], c=None, **plot_kwds)
-frame = plt.gca()
-frame.axes.get_xaxis().set_visible(True)
-frame.axes.get_yaxis().set_visible(True)
-"""
-
-"""
-def plot_clusters(data, algorithm, args, kwds):
-    labels = algorithm(*args, **kwds).fit_predict(data)
-    palette = sns.color_palette('deep', np.unique(labels).max() + 1)
-    colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in labels]
-    plt.scatter(data[data.columns[0]], data[data.columns[1]], c=colors, **plot_kwds)
-    frame = plt.gca()
-    frame.axes.get_xaxis().set_visible(True)
-    frame.axes.get_yaxis().set_visible(True)
-    plt.title('Clusters found by {}'.format(str(algorithm.__name__)), fontsize=24)
-    plt.plot()
-    
-test = reducedDS.loc[:, reducedDS.columns != 'Player']
-plot_clusters(test[['nPTS','nAST']], cluster.DBSCAN, (), {'eps':0.01})
-
-test[test.columns[0]]
-"""
-
-"""
-X = pd.DataFrame([avg_stats_36_minutes_scaled['PTS'], avg_stats_36_minutes_scaled['TRB'], avg_stats_36_minutes_scaled['AST'] ])
-X_t = X.transpose()
-print(X_t)
-sns.set_context('poster')
-sns.set_color_codes()
-plot_kwds = {'alpha' : 0.25, 's' : 80, 'linewidths':0}
-
-frame = plt.gca()
-frame.axes.get_xaxis().set_visible(True)
-frame.axes.get_yaxis().set_visible(True)
-
-def plot_clusters(data, algorithm, args, kwds):
-    labels = algorithm(*args, **kwds).fit_predict(data)
-    print(labels)
-    palette = sns.color_palette('deep', np.unique(labels).max() + 1)
-    colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in labels]
-    plt.scatter(data[data.columns[0]], data[data.columns[1]], c=colors, **plot_kwds)
-    frame = plt.gca()
-    frame.axes.get_xaxis().set_visible(True)
-    frame.axes.get_yaxis().set_visible(True)
-    plt.title('Clusters found by {}'.format(str(algorithm.__name__)), fontsize=24)
-   
-
-plot_clusters(X_t, cluster.DBSCAN, (), {'eps':0.05})
-"""
 
 path = "./ComputedClusters"
 if not os.path.exists(path):
     os.mkdir(path)
 
 df = pd.read_csv('./csv/players_stats.csv')
+
+
+
 #print(df.shape)
 df = df.dropna()
 print(df)

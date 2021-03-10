@@ -6,12 +6,14 @@ Spyder Editor
 import pandas as pd
 from unidecode import unidecode
 
+csv_files_location = "../csv/"
+
 # on recupere les stats de base
-df_2016 = pd.read_csv('NBA_totals_2015-2016.csv')
-df_2017 = pd.read_csv('NBA_totals_2016-2017.csv')
-df_2018 = pd.read_csv('NBA_totals_2017-2018.csv')
-df_2019 = pd.read_csv('NBA_totals_2018-2019.csv')
-df_2020 = pd.read_csv('NBA_totals_2019-2020.csv')
+df_2016 = pd.read_csv(csv_files_location+'NBA_totals_2015-2016.csv')
+df_2017 = pd.read_csv(csv_files_location+'NBA_totals_2016-2017.csv')
+df_2018 = pd.read_csv(csv_files_location+'NBA_totals_2017-2018.csv')
+df_2019 = pd.read_csv(csv_files_location+'NBA_totals_2018-2019.csv')
+df_2020 = pd.read_csv(csv_files_location+'NBA_totals_2019-2020.csv')
 
 # on enleve les accents et caractères spéciaux du nom des joueurs pour les grouper
 df_2016["Player"] = df_2016["Player"].apply(unidecode)
@@ -69,11 +71,11 @@ avg_stats_36_minutes_scaled = avg_stats_36_minutes.drop(columns=["MP"])
 
 
 # on recupere les stats avancées
-ad_2016 = pd.read_csv('NBA_advanced_2015-2016.csv')
-ad_2017 = pd.read_csv('NBA_advanced_2016-2017.csv')
-ad_2018 = pd.read_csv('NBA_advanced_2017-2018.csv')
-ad_2019 = pd.read_csv('NBA_advanced_2018-2019.csv')
-ad_2020 = pd.read_csv('NBA_advanced_2019-2020.csv')
+ad_2016 = pd.read_csv(csv_files_location+'NBA_advanced_2015-2016.csv')
+ad_2017 = pd.read_csv(csv_files_location+'NBA_advanced_2016-2017.csv')
+ad_2018 = pd.read_csv(csv_files_location+'NBA_advanced_2017-2018.csv')
+ad_2019 = pd.read_csv(csv_files_location+'NBA_advanced_2018-2019.csv')
+ad_2020 = pd.read_csv(csv_files_location+'NBA_advanced_2019-2020.csv')
 
 # on enleve les accents et caractères spéciaux du nom des joueurs pour les grouper
 ad_2016["Player"] = ad_2016["Player"].apply(unidecode)
@@ -145,11 +147,9 @@ final_advanced.columns = ["G", "MP", "PER", "TS%", "3PAr", "TRB%", "USG%", "OWS"
 final_advanced_scaled = final_advanced - final_advanced.min()
 final_advanced_scaled = final_advanced_scaled / ( final_advanced_scaled.max() - final_advanced_scaled.min() )
 
-# on fusionne les stats avancées et les stats de base
+# on fusionne les stats avancées, les stats de base et les noms des joueurs
 final = pd.merge(final_advanced_scaled, avg_stats_36_minutes_scaled, on="Player")
+final = pd.merge(team_and_player, final, on="Player")
 
+#export to csv
 final.to_csv("./players_stats.csv")
-
-
-
-
