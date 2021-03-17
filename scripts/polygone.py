@@ -6,23 +6,14 @@ Created on Sat Dec 19 17:16:33 2020
 """
 
 import pandas as pd
-import sklearn.cluster as cluster
 import sklearn.utils as utils
 import numpy as np
-import numpy as np
 import matplotlib.pyplot as plt
-from sklearn import metrics
-from sklearn.datasets import make_blobs
-from sklearn.preprocessing import StandardScaler
-import numpy as np
+
 import matplotlib
 import matplotlib.path as path
-import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-import seaborn as sns
-import chart_studio.plotly as py
-from plotly.offline import download_plotlyjs, init_notebook_mode,  plot
-from plotly.graph_objs import *
+
 """
 Ad1 =  pd.read_csv('NBA_advanced_2019-2020.csv',delimiter = ',')
 Ad1.insert(2,'Year',2020)
