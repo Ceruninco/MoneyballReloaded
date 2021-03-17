@@ -26,9 +26,9 @@ df_2020["Player"] = df_2020["Player"].apply(unidecode)
 # on recupere l'équipe finale de chaque joueur de cette année
 # on fait d'une pierre deux coups en récuperant les noms et en filtrant les joueurs ayant pris leur retraite
 # avant la saison 2020
-team_and_player = df_2020[["Player", "Tm"]]
+team_and_player = df_2020[["Player", "Tm", 'Pos']]
 team_and_player["final_team"] = team_and_player.groupby('Player')['Tm'].transform('last')
-team_and_player = team_and_player[["Player", "final_team"]]
+team_and_player = team_and_player[["Player", "final_team", "Pos"]]
 team_and_player = team_and_player.drop_duplicates()
 
 
