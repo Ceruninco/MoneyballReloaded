@@ -7,18 +7,9 @@ Created on Wed Mar  3 09:22:52 2021
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import sklearn.cluster as cluster
-import numpy as np
 import os
 from sklearn.cluster import DBSCAN
-from sklearn import metrics
-from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
-import pandas as pd
-import matplotlib.pyplot as plt
-
 
 
 
@@ -37,15 +28,15 @@ df = df.dropna()
 data = np.zeros((df.shape[0],8))
 #print(df[['2P%', '3P%']].values[0])
 
+
 for i in range(df.shape[0]):
     data[i] = df[['TRB', 'PTS', 'AST', 'DWS', 'TS%', "3PA", "OWS","USG%"]].values[i]
     
-#print(data)
 
 
-#print(X)
 
 # Compute DBSCAN
+
 def generate_Computed_Clusters_Directory():
     X = StandardScaler().fit_transform(data)
     i = 0.1
@@ -112,6 +103,8 @@ def iterative_Clustering(epsilon,minPoints,noise_prop):
     
 iterative_Clustering(0.9,2,0.52)
 
+
+    
     
 """
 core_samples_mask = np.zeros_like(db.labels_, dtype=bool)

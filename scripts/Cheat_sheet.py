@@ -13,8 +13,6 @@ final_advanced = final_advanced.drop(columns=["G"])
 final_advanced = pd.concat([final_advanced, games], axis=1)
 
 
-
-
 #Pour aggreger des données avec des fonctions différentes selon la colonne
 
 agr = {'MP':['sum'],'G': ['sum'], 'PER':['sum'],'TS%':['sum'],'3PAr':['sum'],'TRB%':['sum'],'USG%':['sum'], 'OWS':['sum'], 'DWS':['sum']}
@@ -171,6 +169,104 @@ for index, elem in s.items()
 
 X = pd.get_dummies(X)
 
+# get the value of the nth column (except the index) in a pd serie
+
+result.get(n) 
+
+# to only keep numerical value
+
+X_test = X_test.select_dtypes(exclude=['object'])
+
+
+# to remove columns that are not in name list
+
+df = df[df.columns.intersection(final_table_columns)]
+
+
+# Get list of categorical variables
+s = (X_train.dtypes == 'object')
+object_cols = list(s[s].index)
+
+
+# label encoding => from "low", "medium", "high" to 1, 2, 3
+label_X_train[col] = label_encoder.fit_transform(X_train[col])
+label_X_valid[col] = label_encoder.transform(X_valid[col])
+
+
+#checking if catagorical column has the same range from 2 df 
+# with set, we remove duplicate to only get the values taken in the column
+good_label_cols = [col for col in object_cols if set(X_train[col]) == set(X_valid[col])]
+        
+
+#get the cardinality of every categorical columns
+s = (X_train.dtypes == 'object')
+object_cols = list(s[s].index)
+object_nunique = [X_train[col].nunique() for col in object_cols]
+
+
+# get the low and high cardinality columns
+
+card_limit = 10
+# Columns that will be one-hot encoded
+low_cardinality_cols = [col for col in object_cols if X_train[col].nunique() < card_limit]
+
+# Columns that will be dropped from the dataset
+high_cardinality_cols = list(set(object_cols)-set(low_cardinality_cols))
+
+
+# to One-hot encode categorical data
+
+# Remove the high cardinality columns
+X_train = X_train.drop(high_cardinality_cols, axis=1)
+# OH encode low cardinality columns
+OH_cols_train = pd.DataFrame(OH_encoder.fit_transform(X_train[low_cardinality_cols]))
+# retrieve the index because fit_transform lose it 
+OH_cols_train.index = X_train.index
+# remove columns that have been OH encoded
+num_cols_X_train = X_train.drop(low_cardinality_cols, axis=1)
+# concat OH columns with numerical columns
+OH_X_train = pd.concat([num_cols_X_train, OH_cols_train] , axis=1)
+
+
+# pipeline
+
+# Preprocessing for categorical data
+categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='most_frequent')),
+    ('onehot', OneHotEncoder(handle_unknown='ignore'))
+])
+
+
+# Bundle preprocessing for numerical and categorical data
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', numerical_transformer, numerical_cols),
+        ('cat', categorical_transformer, categorical_cols)
+    ])
+
+
+# Bundle preprocessing and modeling code in a pipeline
+my_pipeline = Pipeline(steps=[('preprocessor', preprocessor), ('model', model)])
+
+# Preprocessing of training data, fit model 
+my_pipeline.fit(X_train, y_train)
+
+# Preprocessing of validation data, get predictions
+preds = my_pipeline.predict(X_valid)
+
+
+# fold the dataset for cross validation => array of metrics values
+scores = -1 * cross_val_score(my_pipeline, X, y, cv=3, scoring='neg_mean_absolute_error')
 
 
 
+# XGBoosting
+my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05)
+my_model.fit(X_train, y_train, 
+             early_stopping_rounds=5, 
+             eval_set=[(X_valid, y_valid)], 
+             verbose=False)
+
+
+
+# data leakage
