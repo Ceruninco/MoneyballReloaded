@@ -154,5 +154,9 @@ final = pd.merge(final_advanced_scaled, avg_stats_36_minutes_scaled, on="Player"
 final = pd.merge(team_and_player, final, on="Player")
 
 
+# we remove the mean and scale to unit variance
+#final = StandardScaler().fit_transform(final)
+
+
 #export to csv
 final.to_csv("./players_stats.csv")

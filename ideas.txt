@@ -15,3 +15,8 @@ Evaluer la qualité d'un cluster:
 	-Calculer dispersion des postes dans un cluster données
 	-Appliquer polygone sur les joueurs similaires trouvés
 	-
+
+
+Score de similarité entre les joeurs:
+	- Distance entre les deux points d'un cluster? 
+	- Aire entre les deux polygones? 
