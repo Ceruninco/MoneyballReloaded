@@ -4,7 +4,8 @@ Created on Sat Dec 19 17:16:33 2020
 
 @author: Aksel
 """
-
+import shapely.geometry as sg
+import descartes
 import pandas as pd
 import sklearn.cluster as cluster
 import sklearn.utils as utils
@@ -124,12 +125,14 @@ def performance_polygon_vs_player(*PlayerName):
                 [path.Path.LINETO,]*(len(values) -1) + \
                 [ path.Path.CLOSEPOLY ]
         _path = path.Path(points, codes)
-        _patch = patches.PathPatch(_path, fill=True, color=colors[i], linewidth=0, alpha=.2)
+        _patch = patches.PathPatch(_path, fill=False, color=colors[i], linewidth=0, alpha=.2)
         axes.add_patch(_patch)
-        _patch = patches.PathPatch(_path, fill=False, linewidth = 2)
+        _patch = patches.PathPatch(_path, fill=False, edgecolor=colors[i], linewidth = 2, label=PlayerName[i])
         axes.add_patch(_patch)
-    plt.scatter(points[:,0],points[:,1], linewidth=2,
+        plt.scatter(points[:,0],points[:,1], linewidth=2,
                 s=50, color='white', edgecolor='black', zorder=10)
+    #plt.scatter(points[:,0],points[:,1], linewidth=2,s=50, color='white', edgecolor='black', zorder=10)
+    plt.legend(loc="lower right",borderaxespad=-6)
     """
     maxi = max([Player.iloc[0,19]+1, Player.iloc[0,20]+1, Player.iloc[0,21]+1])
     if maxi < 10:
@@ -146,7 +149,7 @@ def performance_polygon_vs_player(*PlayerName):
         plt.text(angle_rad, 10.75, properties[i], size=14,
                  horizontalalignment=ha, verticalalignment="center")
 
-    plt.title("Statistics of "+PlayerName[0]+" ("+colors[0]+") vs "+PlayerName[1]+" ("+colors[1]+")", pad = 50)
+    plt.title("Performance polygon", pad = 50)
     plt.show()
 
 
@@ -155,11 +158,11 @@ PlayerName='LeBron James'
 #PlayerName5= "Buddy Hield"
 PlayerName6="Stephen Curry"
 #performance_polygon(PlayerName)
-#PlayerName2 = "Aaron Brooks"
-#PlayerName3 = "Brandon Knight"
-#PlayerName4 = "Jamal Crawford"
+PlayerName2 = "Aaron Brooks"
+PlayerName3 = "Brandon Knight"
+PlayerName4 = "Jamal Crawford"
 
-performance_polygon_vs_player(PlayerName, PlayerName6)
+performance_polygon_vs_player(PlayerName, PlayerName6, PlayerName2, PlayerName3, PlayerName4)
 
 
 def histogram_minutes_played_random_chosen_players():
