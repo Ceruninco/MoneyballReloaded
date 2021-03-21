@@ -20,3 +20,5 @@ Evaluer la qualité d'un cluster:
 Score de similarité entre les joeurs:
 	- Distance entre les deux points d'un cluster? 
 	- Aire entre les deux polygones? 
+
+Polygone Moy par equipe pour comparer 2 equipes

@@ -11,7 +11,7 @@ import os
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 
-path = "./ComputedClusters"
+path = "../ComputedClusters"
 if not os.path.exists(path):
     os.mkdir(path)
 
@@ -95,7 +95,7 @@ def iterative_Clustering(epsilon,minPoints,noise_prop):
         result = result.sort_values(by=[1], ascending = False)
     print(result)
     
-iterative_Clustering(0.9,2,0.52)
+#iterative_Clustering(0.9,2,0.52)
 
 
     

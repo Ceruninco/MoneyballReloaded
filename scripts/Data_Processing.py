@@ -29,7 +29,7 @@ df_2020["Player"] = df_2020["Player"].apply(unidecode)
 team_and_player = df_2020[["Player", "Tm", 'Pos']]
 team_and_player["final_team"] = team_and_player.groupby('Player')['Tm'].transform('last')
 team_and_player = team_and_player[["Player", "final_team", "Pos"]]
-team_and_player = team_and_player.drop_duplicates()
+team_and_player = team_and_player.drop_duplicates(subset=['Player'])
 
 
 # on ne garde que les colonnes qui nous interesse
@@ -159,4 +159,4 @@ final = pd.merge(team_and_player, final, on="Player")
 
 
 #export to csv
-final.to_csv("./players_stats.csv")
+final.to_csv("../csv/players_stats.csv")
