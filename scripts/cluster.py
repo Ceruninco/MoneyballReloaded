@@ -5,6 +5,10 @@ Created on Wed Mar  3 09:22:52 2021
 @author: hugod
 """
 
+#TODO
+# pip install fuzzy-c-means
+from fcmeans import FCM
+
 import pandas as pd
 import numpy as np
 import os
@@ -154,3 +158,38 @@ plt.title('Estimated number of clusters: %d' % n_clusters_)
 
 plt.show()
 """
+
+
+def fuzz_c_means_Clustering(nClustersWanted):
+    # DATA
+    reference = pd.read_csv('../csv/players_stats.csv')
+    path = "epsilon_"+str(epsilon)+"_MinPoints_"+str(minPoints)+"_NoiseProp_"+str(noise_prop)+".csv"
+    df = pd.read_csv('./ComputedClusters/'+path, delimiter=';')
+    tmp = pd.DataFrame()
+
+    for k in range(df.shape[0]):
+        if (df['1'].values[k] == 0 or df['1'].values[k] == -1):
+            row = [[df['0'].values[k]]]
+            tmp = tmp.append(row)
+    player_stats = pd.DataFrame();
+    for i in range(tmp.shape[0]):
+        for j in range(reference.shape[0]):
+            if(tmp[0].values[i] == reference['Player'].values[j]):
+                row = [reference[['TRB', 'PTS', 'AST', 'DWS', 'TS%', "3PA", "OWS","USG%"]].values[j]]
+                player_stats = player_stats.append(row)
+
+    #FCM
+    fcm = FCM(nClusters = nClustersWanted)
+    fcm.fit(player_stats)
+
+    # outputs
+    fcm_centers = fcm.centers
+    fcm_labels = fcm.predict(X)
+
+    # plot result
+    f, axes = plt.subplots(1, 2, figsize=(11,5))
+    axes[0].scatter(X[:,0], X[:,1], alpha=.1)
+    axes[1].scatter(X[:,0], X[:,1], c=fcm_labels, alpha=.1)
+    axes[1].scatter(fcm_centers[:,0], fcm_centers[:,1], marker="+", s=500, c='w')
+    plt.savefig('../images/basic-clustering-output.jpg')
+    plt.show()
