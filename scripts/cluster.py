@@ -7,13 +7,17 @@ Created on Wed Mar  3 09:22:52 2021
 
 #TODO
 # pip install fuzzy-c-means
-from fcmeans import FCM
+#from fcmeans import FCM
 
 import pandas as pd
 import numpy as np
 import os
+import seaborn as sns
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+import hdbscan
+from scipy.signal import savgol_filter
 
 path = "../ComputedClusters"
 if not os.path.exists(path):
@@ -22,7 +26,7 @@ if not os.path.exists(path):
 df = pd.read_csv('../csv/players_stats.csv')
 
 #print(df.shape)
-df = df.dropna()
+#df = df.dropna()
 #print(df)
 data = np.zeros((df.shape[0],8))
 #print(df[['2P%', '3P%']].values[0])
@@ -102,6 +106,7 @@ def iterative_Clustering(epsilon,minPoints,noise_prop):
 #iterative_Clustering(0.9,2,0.52)
 
 
+
     
     
 """
@@ -159,7 +164,7 @@ plt.title('Estimated number of clusters: %d' % n_clusters_)
 plt.show()
 """
 
-
+"""
 def fuzz_c_means_Clustering(nClustersWanted):
     # DATA
     reference = pd.read_csv('../csv/players_stats.csv')
@@ -193,3 +198,38 @@ def fuzz_c_means_Clustering(nClustersWanted):
     axes[1].scatter(fcm_centers[:,0], fcm_centers[:,1], marker="+", s=500, c='w')
     plt.savefig('../images/basic-clustering-output.jpg')
     plt.show()
+    """
+    
+"""
+def soft_clustering_HDBSCAN():
+    clusterer = hdbscan.HDBSCAN(min_cluster_size=2, cluster_selection_epsilon=0.9).fit_predict(data)
+    result = pd.DataFrame(clusterer)
+    result = result.sort_values(by=[0], ascending = False)
+    
+    return result
+    
+
+#result = soft_clustering_HDBSCAN()
+    
+
+from sklearn import datasets
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+digits = datasets.load_digits()
+#data = digits.data
+print(data)
+projection = TSNE().fit_transform(data)
+plt.scatter(*projection.T)
+import hdbscan
+clusterer = hdbscan.HDBSCAN(min_cluster_size=5, prediction_data=True).fit(data)
+color_palette = sns.color_palette('Paired', 12)
+cluster_colors = [color_palette[x] if x >= 0
+                  else (0.5, 0.5, 0.5)
+                  for x in clusterer.labels_]
+cluster_member_colors = [sns.desaturate(x, p) for x, p in
+                         zip(cluster_colors, clusterer.probabilities_)]
+plt.scatter(*projection.T, s=50, linewidth=0, c=cluster_member_colors, alpha=0.25)
+"""
