@@ -71,6 +71,7 @@ def performance_polygon(PlayerName):
     plt.title("Statistics of "+PlayerName)
     plt.show()
     
+    
 def performance_polygon_vs_player(*PlayerName):
     colors = ["blue", "red", "green", "orange", "brown"]
     fig = plt.figure(figsize=(10,8), facecolor='white')
@@ -101,7 +102,6 @@ def performance_polygon_vs_player(*PlayerName):
                 [path.Path.LINETO,]*(len(values) -1) + \
                 [ path.Path.CLOSEPOLY ]
         _path = path.Path(points, codes)
-        
         _patch = patches.PathPatch(_path, fill=False, color=colors[i], linewidth=0, alpha=.2)
         axes.add_patch(_patch)
         _patch = patches.PathPatch(_path, fill=False, edgecolor=colors[i], linewidth = 2, label=PlayerName[i])
@@ -117,7 +117,6 @@ def performance_polygon_vs_player(*PlayerName):
     else:
         plt.ylim(0,maxi)
         """
-    
     plt.ylim(0,10)
     for i in range(len(properties)):
         angle_rad = i/float(len(properties))*2*np.pi
@@ -131,12 +130,12 @@ def performance_polygon_vs_player(*PlayerName):
     plt.show()
 
 
-PlayerName='LeBron James'
+PlayerName='Ish Smith'
 #PlayerName5= "Buddy Hield"
-PlayerName6="Stephen Curry"
+PlayerName6="Elfrid Payton"
 #performance_polygon(PlayerName)
 PlayerName3 = "Brandon Knight"
 PlayerName4 = "Jamal Crawford"
 
 
-performance_polygon_vs_player(PlayerName, PlayerName6, PlayerName3, PlayerName4)
+performance_polygon_vs_player(PlayerName, PlayerName6)
