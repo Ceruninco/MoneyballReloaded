@@ -13,7 +13,7 @@ sns.set()
 
 
 # %%
-df = pd.read_csv('../csv/players_stats.csv')
+df = pd.read_csv('./csv/players_stats.csv')
 
 clustering_df = df.drop(columns=["Unnamed: 0","Player", "final_team","Pos"])
 
