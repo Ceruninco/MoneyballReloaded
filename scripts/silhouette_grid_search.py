@@ -37,7 +37,7 @@ reducedDataSet = pcabis.transform(clustering_df)
 
 
 results = pd.DataFrame(data = None, columns = ['epsilon' , 'min_size', 'score'],dtype=np.float64) 
-
+print('dickhead')
 for eps in np.arange(start = 0.05,stop=0.95,step=0.01,dtype=np.float64):
     for size in np.arange(start = 2,stop=10,step=1,dtype=np.float64): 
         m = DBSCAN(eps=eps, min_samples=size)
