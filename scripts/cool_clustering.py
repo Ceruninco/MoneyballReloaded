@@ -24,10 +24,10 @@ sns.set()
 # In[2]:
 
 
-df = pd.read_csv('../csv/players_stats.csv')
+df = pd.read_csv('./csv/players_stats.csv')
 
 clustering_df = df.drop(columns=["Unnamed: 0","Player", "final_team","Pos"])
-pca = PCA(n_components=0.99, svd_solver = 'full')
+pca = PCA(n_components=0.85, svd_solver = 'full')
 pcabis = pca.fit(clustering_df)
 
 reducedDataSet = pcabis.transform(clustering_df)
@@ -48,7 +48,7 @@ distances, indices = nbrs.kneighbors(reducedDataSet)
 
 distances = np.sort(distances, axis=0)
 distances = distances[:,1]
-distancebis = savgol_filter(distances,101,5)
+distancebis = savgol_filter(distances,51,5)
 plt.figure(0)
 plt.plot(distances)
 plt.figure(1)
@@ -81,7 +81,7 @@ print(optiepsi)
 # In[5]:
 
 
-m = DBSCAN(eps=new[elbow_index][1], min_samples=2)
+m = DBSCAN(eps=new[elbow_index][1], min_samples=5)
 m.fit(reducedDataSet)
 
 
@@ -105,20 +105,8 @@ plt.figure(5)
 plt.scatter(reducedDataSet[:,0], reducedDataSet[:,1], c=vectorizer(clusters))
 
 
-# In[9]:
-
-
-print(len(clusters))
-plt.figure(6)
-
-# In[10]:
-
-
-print(len(clustering_df))
-
-
-# In[ ]:
-
-
-
+score = sklearn.metrics.silhouette_score(reducedDataSet,clusters)
+# %%
+print("silhouette score : ")
+print(score)
 
