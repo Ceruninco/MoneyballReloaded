@@ -109,7 +109,7 @@ plt.scatter(reducedDataSet[:,0], reducedDataSet[:,1], c=vectorizer(clusters))
 
 
 print(len(clusters))
-
+plt.figure(6)
 
 # In[10]:
 

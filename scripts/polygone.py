@@ -89,9 +89,9 @@ def performance_polygon_vs_player(*PlayerName):
         matplotlib.rc('axes', facecolor = 'white')
     
         
-    
+
         axes = plt.subplot(111, polar=True)
-    
+        
         t = np.arange(0,2*np.pi,2*np.pi/len(properties))
         plt.xticks(t, [])
     
@@ -136,6 +136,5 @@ PlayerName6="Elfrid Payton"
 #performance_polygon(PlayerName)
 PlayerName3 = "Brandon Knight"
 PlayerName4 = "Jamal Crawford"
-
 
 performance_polygon_vs_player(PlayerName, PlayerName6)
