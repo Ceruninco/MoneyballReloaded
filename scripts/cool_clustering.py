@@ -106,7 +106,7 @@ plt.scatter(reducedDataSet[:,0], reducedDataSet[:,1], c=vectorizer(clusters))
 
 
 score = sklearn.metrics.silhouette_score(reducedDataSet,clusters)
-# %%
+
 print("silhouette score : ")
 print(score)
 
