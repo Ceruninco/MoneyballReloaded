@@ -130,11 +130,11 @@ def performance_polygon_vs_player(*PlayerName):
     plt.show()
 
 
-PlayerName='Ish Smith'
+PlayerName='Chandler Parsons'
 #PlayerName5= "Buddy Hield"
-PlayerName6="Elfrid Payton"
+PlayerName6="Thabo Sefolosha"
 #performance_polygon(PlayerName)
-PlayerName3 = "Brandon Knight"
-PlayerName4 = "Jamal Crawford"
+PlayerName3 = "Mikal Bridges"
+PlayerName4 = "Cedi Osman"
 
-performance_polygon_vs_player(PlayerName, PlayerName6)
+performance_polygon_vs_player(PlayerName, PlayerName4)
