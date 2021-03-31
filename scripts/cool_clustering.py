@@ -27,7 +27,7 @@ sns.set()
 df = pd.read_csv('../csv/players_stats.csv')
 
 clustering_df = df.drop(columns=["Unnamed: 0","Player", "final_team","Pos"])
-pca = PCA(n_components=0.85, svd_solver = 'full')
+pca = PCA(n_components=0.9, svd_solver = 'full')
 pcabis = pca.fit(clustering_df)
 
 reducedDataSet = pcabis.transform(clustering_df)
@@ -48,7 +48,7 @@ distances, indices = nbrs.kneighbors(reducedDataSet)
 
 distances = np.sort(distances, axis=0)
 distances = distances[:,1]
-distancebis = savgol_filter(distances,51,5)
+distancebis = savgol_filter(distances,151,5)
 plt.figure(0)
 plt.plot(distances)
 plt.figure(1)

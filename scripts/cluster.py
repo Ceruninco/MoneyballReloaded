@@ -109,98 +109,9 @@ def iterative_Clustering(epsilon,minPoints,noise_prop):
 
     
     
-"""
-core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
-core_samples_mask[db.core_sample_indices_] = True
-labels = db.labels_
-print(labels)
-# Number of clusters in labels, ignoring noise if present.
-n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
-n_noise_ = list(labels).count(-1)
 
-
-res = np.zeros((0,2))
-result = pd.DataFrame(res)
-for i in range(df.shape[0]):
-    row = [[df['Player'].values[i], labels[i]]]
-    result = result.append(row)
-
-"""
-
-#print('Estimated number of clusters: %d' % n_clusters_)
-#print('Estimated number of noise points: %d' % n_noise_)
-#print("Homogeneity: %0.3f" % metrics.homogeneity_score(labels_true, labels))
-#print("Completeness: %0.3f" % metrics.completeness_score(labels_true, labels))
-#print("V-measure: %0.3f" % metrics.v_measure_score(labels_true, labels))
-#print("Adjusted Rand Index: %0.3f" % metrics.adjusted_rand_score(labels_true, labels))
-#print("Adjusted Mutual Information: %0.3f" % metrics.adjusted_mutual_info_score(labels_true, labels))
-#print("Silhouette Coefficient: %0.3f" % metrics.silhouette_score(X, labels))
-
-
-# White removed and is used for noise instead.
-"""
-unique_labels = set(labels)
-colors = [plt.cm.Spectral(each)
-          for each in np.linspace(0, 1, len(unique_labels))]
-for k, col in zip(unique_labels, colors):
-    if k == -1:
-        # White used for noise.
-        col = [1, 1, 1, 1]
-
-    class_member_mask = (labels == k)
-
-    xy = X[class_member_mask & core_samples_mask]
-    plt.plot(xy[:, 0], xy[:, 1], 'o', markerfacecolor=tuple(col),
-             markeredgecolor='k', markersize=14)
-
-    xy = X[class_member_mask & ~core_samples_mask]
-    plt.plot(xy[:, 0], xy[:, 1], 'o', markerfacecolor=tuple(col),
-             markeredgecolor='k', markersize=6)
-
-plt.title('Estimated number of clusters: %d' % n_clusters_)
-#plt.xlabel("TRB")
-#plt.ylabel("PTS")
-
-plt.show()
-"""
-
-"""
-def fuzz_c_means_Clustering(nClustersWanted):
-    # DATA
-    reference = pd.read_csv('../csv/players_stats.csv')
-    path = "epsilon_"+str(epsilon)+"_MinPoints_"+str(minPoints)+"_NoiseProp_"+str(noise_prop)+".csv"
-    df = pd.read_csv('./ComputedClusters/'+path, delimiter=';')
-    tmp = pd.DataFrame()
-
-    for k in range(df.shape[0]):
-        if (df['1'].values[k] == 0 or df['1'].values[k] == -1):
-            row = [[df['0'].values[k]]]
-            tmp = tmp.append(row)
-    player_stats = pd.DataFrame();
-    for i in range(tmp.shape[0]):
-        for j in range(reference.shape[0]):
-            if(tmp[0].values[i] == reference['Player'].values[j]):
-                row = [reference[['TRB', 'PTS', 'AST', 'DWS', 'TS%', "3PA", "OWS","USG%"]].values[j]]
-                player_stats = player_stats.append(row)
-
-    #FCM
-    fcm = FCM(nClusters = nClustersWanted)
-    fcm.fit(player_stats)
-
-    # outputs
-    fcm_centers = fcm.centers
-    fcm_labels = fcm.predict(X)
-
-    # plot result
-    f, axes = plt.subplots(1, 2, figsize=(11,5))
-    axes[0].scatter(X[:,0], X[:,1], alpha=.1)
-    axes[1].scatter(X[:,0], X[:,1], c=fcm_labels, alpha=.1)
-    axes[1].scatter(fcm_centers[:,0], fcm_centers[:,1], marker="+", s=500, c='w')
-    plt.savefig('../images/basic-clustering-output.jpg')
-    plt.show()
-    """
     
-"""
+
 def soft_clustering_HDBSCAN():
     clusterer = hdbscan.HDBSCAN(min_cluster_size=2, cluster_selection_epsilon=0.9).fit_predict(data)
     result = pd.DataFrame(clusterer)
@@ -232,4 +143,3 @@ cluster_colors = [color_palette[x] if x >= 0
 cluster_member_colors = [sns.desaturate(x, p) for x, p in
                          zip(cluster_colors, clusterer.probabilities_)]
 plt.scatter(*projection.T, s=50, linewidth=0, c=cluster_member_colors, alpha=0.25)
-"""

@@ -32,7 +32,7 @@ clustering_df = df.drop(columns=["Unnamed: 0","Player", "final_team","Pos"])
 
 results = pd.DataFrame(data = None, columns = ['epsilon' , 'min_size', 'score'],dtype=np.float64) 
 
-for var_portion in np.arange(start = 0.50,stop=0.95,step=0.05,dtype=np.float64):
+for var_portion in np.arange(start = 0.80,stop=0.95,step=0.05,dtype=np.float64):
     print(var_portion)
     pca = PCA(n_components=var_portion, svd_solver = 'full')
     pcabis = pca.fit(clustering_df)
@@ -45,13 +45,22 @@ for var_portion in np.arange(start = 0.50,stop=0.95,step=0.05,dtype=np.float64):
             m = DBSCAN(eps=eps, min_samples=size)
             m.fit(reducedDataSet)
             if(max(m.labels_)>1):
-                score = sklearn.metrics.silhouette_score(reducedDataSet,m.labels_)
+                score = sklearn.metrics.silhouette_score(clustering_df,m.labels_)
 
                 results = results.append({'var_portion' : var_portion, 'epsilon' : eps , 'min_size' : size , 'score' : score, 'nb_clusters' : max(m.labels_)+1}, ignore_index=True)
 
+results = results.sort_values(by=[ "nb_clusters"], ascending = False)
+results.to_csv("../csv/silhouette_search.csv", sep =';')
 
-results.to_csv("../csv/silhouette_search.csv")
 # %%
+
+pca = PCA(n_components=0.9, svd_solver = 'full')
+pcabis = pca.fit(clustering_df)
+dataSet = pcabis.transform(clustering_df)
+model = DBSCAN(eps=0.60, min_samples=2)
+model.fit(dataSet)
+result = pcabis.inverse_transform(dataSet)
+print(model.labels_)
 
 # %%
 
