@@ -22,3 +22,5 @@ Score de similarité entre les joeurs:
 	- Aire entre les deux polygones? 
 
 Polygone Moy par equipe pour comparer 2 equipes
+
+- generer le polygone ppur tous les clusters

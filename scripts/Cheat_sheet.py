@@ -80,6 +80,23 @@ for index, item in enumerate(array):
 len(df.index)
 
 
+# merge 2 df by column values
+# to only keep row in the original df which players value are in the second
+df_fcm = pd.merge(df_fcm, unclustered_players, on="Player")
+
+
+#sort dataframe
+
+df = df.sort_values(by=["col_name"])
+
+# to remove rows from df which column value are not in a list
+
+df = df[~df['col'].isin(list_of_values)]
+
+
+#tranform series to list
+df = df["Nomcol"].tolist()
+
 
  #########################################################
  ############# MACHINE LEARNING WITH SKLEARN #############
@@ -267,6 +284,3 @@ my_model.fit(X_train, y_train,
              eval_set=[(X_valid, y_valid)], 
              verbose=False)
 
-
-
-# data leakage

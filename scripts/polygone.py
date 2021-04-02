@@ -72,11 +72,12 @@ def performance_polygon(PlayerName):
     plt.show()
     
     
-def performance_polygon_vs_player(*PlayerName):
-    colors = ["blue", "red", "green", "orange", "brown"]
+def performance_polygon_vs_player(PlayersName):
+    colors = ["blue", "red", "green", "orange", "brown", "firebrick","sienna",
+              "gold", "olivedrab", "mediumspringgreen", "navy", "plum", "cadetblue", "darkmagenta"]
     fig = plt.figure(figsize=(10,8), facecolor='white')
-    for i in range (0,len(PlayerName)):
-        Player=10*NormalizeData[NormalizeData.Player.eq(PlayerName[i])]
+    for i in range (0,len(PlayersName)):
+        Player=10*NormalizeData[NormalizeData.Player.eq(PlayersName[i])]
         #Player2=10*NormalizeData[NormalizeData.Player.eq(PlayerName[1])]
         
         # Player = AdDisp[AdDisp.Year.eq(2020)]
@@ -87,8 +88,6 @@ def performance_polygon_vs_player(*PlayerName):
         values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB"], Player["PTS"], Player["3PA"]]
         #values2 = [Player2['OWS'], Player2['DWS'], Player2['AST'], Player2["TS%"], Player2["TRB%"], Player2["PTS"], Player2["3PA"]]
         matplotlib.rc('axes', facecolor = 'white')
-    
-        
 
         axes = plt.subplot(111, polar=True)
         
@@ -104,7 +103,7 @@ def performance_polygon_vs_player(*PlayerName):
         _path = path.Path(points, codes)
         _patch = patches.PathPatch(_path, fill=False, color=colors[i], linewidth=0, alpha=.2)
         axes.add_patch(_patch)
-        _patch = patches.PathPatch(_path, fill=False, edgecolor=colors[i], linewidth = 2, label=PlayerName[i])
+        _patch = patches.PathPatch(_path, fill=False, edgecolor=colors[i], linewidth = 2, label=PlayersName[i])
         axes.add_patch(_patch)
         plt.scatter(points[:,0],points[:,1], linewidth=2,
                 s=50, color='white', edgecolor='black', zorder=10)
@@ -137,4 +136,5 @@ PlayerName6="Thabo Sefolosha"
 PlayerName3 = "Mikal Bridges"
 PlayerName4 = "Cedi Osman"
 
-performance_polygon_vs_player(PlayerName, PlayerName4)
+
+list_of_player = ["Chandler Parsons", "Thabo Sefolosha", "Cedi Osman"]

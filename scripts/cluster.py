@@ -17,7 +17,6 @@ from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import hdbscan
-from scipy.signal import savgol_filter
 
 path = "../ComputedClusters"
 if not os.path.exists(path):
@@ -105,12 +104,6 @@ def iterative_Clustering(epsilon,minPoints,noise_prop):
     
 #iterative_Clustering(0.9,2,0.52)
 
-
-
-    
-    
-
-    
 """
 def soft_clustering_HDBSCAN():
     clusterer = hdbscan.HDBSCAN(min_cluster_size=2, cluster_selection_epsilon=0.9).fit_predict(data)
@@ -144,14 +137,8 @@ cluster_member_colors = [sns.desaturate(x, p) for x, p in
                          zip(cluster_colors, clusterer.probabilities_)]
 plt.scatter(*projection.T, s=50, linewidth=0, c=cluster_member_colors, alpha=0.25)
 """
-import hdbscan
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
-import matplotlib as mpl
-
-from scipy.spatial.distance import cdist
 
 
 sns.set_context('poster')
