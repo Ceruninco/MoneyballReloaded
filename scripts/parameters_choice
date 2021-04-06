@@ -1,0 +1,297 @@
+TEST 1:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 2
+Nb Cluster Fuzzy: 25
+nb_max_players_per_cluster_dbscan : 3
+nb_max_players_per_cluster_fcm : 3
+
+=> Pas mal
+
+
+TEST 2:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 2
+Nb Cluster Fuzzy: 20
+nb_max_players_per_cluster_dbscan : 3
+nb_max_players_per_cluster_fcm: 3
+
+=> MIEUX
+
+
+
+
+TEST 3:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 2
+Nb Cluster Fuzzy: 15
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 4
+
+=> Encore Mieux! => sauf parfois un joueur est de trop dans les clusters fcm
+
+
+TEST 4:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 3
+Nb Cluster Fuzzy: 15
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 4
+
+
+NB Joueurs a clusteriser: 347
+NB Joueurs clusterisées au total: 145 
+
+=> MOYEN
+
+
+
+TEST 5:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 15
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 4
+
+
+NB Joueurs a clusteriser: 347
+NB Joueurs clusterisées au total: 145 
+
+=> VRAIMENT Mieux mais parfois il y a un joueur en trop par cluster
+
+
+TEST 6:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 15
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 347
+NB Joueurs clusterisées au total: 130
+
+=> encore un joueur par cluster qui ne fit pas trop
+
+TEST 7:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 15
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 2
+
+
+NB Joueurs a clusteriser: 347
+NB Joueurs clusterisées au total: 115
+
+=> MOYEN, MOINS Bien qu'aver 3 joueurs par cluster fcm
+
+
+TEST 8:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 20
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 144
+
+=> vraient bien!
+
+
+TEST 9:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 25
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 159
+
+=> Encore mieux
+
+
+
+TEST 10:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 30
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 174
+
+=> Encore mieux mais parfois un joueur intrus dans un cluster (rubio, Josh Richardson, Donovan Mitchell, Lebron, Gasol, John Collins, Blake Griffin, Knox, ) => rajouter la taille
+
+
+TEST 11:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 35
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 189
+
+=> Encore mieux sauf intrus (colin sexton T, Norman powell T, Mason plumlee, Kyle Anderson T, John collins T, Myles turner, Blake griffin T, Russel westbrook, Donovan Mitchell T, Winslow)
+
+
+
+TEST 12:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 40
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 204
+
+=> Aussi bien que le précendent => Ce sont les deux meilleurs pour l'instant 
+
+Intrus: (Millsap, Blake Griffin T, John Coll ins, Paul George T, Lebron T, Westbrrok/simmons/jokic, Batum T, Sexton T, MayMichael Green T, Gasol T, Hollis Jefferson T, )
+
+
+TEST 13:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 45
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 219
+
+
+=> Pas mal! Un peu moins bien que les deux précédents
+
+=> 8 foireux
+
+=> Intrus (Gallinari T, Devonte Graham, Rondae Hellis Jefferson T, Dejonte Murray T, Millsap T, Donovan Mitchell T, Doncic/Young/jokic, John Collins T, )
+
+
+
+TEST 14:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 234
+
+=> Pas Mal ! un peu comme celui d'avant
+
+=>  Foireux IIIII
+
+=> Intrus: Gasol T, Mason PLumlee, Courtney Lee, Wiggins, Simmons T, Nurkic, Westbrrok, Josh Richardson, Blake Giffin T, John Collins T, Donovan Mitchell T, 
+
+
+
+TEST 15:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 55
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 249
+
+
+=> Un peu moins bien qu'avant
+
+=> Foireux IIIIIII
+
+=> Intrus: Trae Young, Kawhi T, Paul Millsap T, Courtney Lee, Robin Lopez, Joakim Noah T, Andrew wiggins T, chris paul T, Harisson barnes T, Blake Griffin T, Marc Gasol T, Paul George T, 
+
+
+
+
+
+TEST 16:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 52
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 3
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 240
+
+
+=> comme celui d'avant
+
+=> Foireux: IIIIIIII
+
+=> Intrus: Zubac, montrezl harelle, Gaso T, Batum, McCollum, Harisson barnes, Bam, Chris Paul T, KAT, Barea, Rondae Ellis, Jokic, Kyle O'quinn
+
+
+
+PENSER A SE FIXER SUR UNE VAL DE NB CLUSTER FUZZY ET JOUER SUR UN AUTRE PARAM
+
+
+
+ (35, 40)  > (45, 50) > (52, 55)
+

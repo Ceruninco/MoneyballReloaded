@@ -73,7 +73,9 @@ def performance_polygon(PlayerName):
     
     
 def performance_polygon_vs_player(PlayersName):
-    colors = ["blue", "red", "green", "orange", "brown", "firebrick","sienna",
+    properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB", "PTS", "3PA", ]
+    values = np.random.uniform(5,9,len(properties))
+    colors = ["blue", "red", "green", "orange", "brown", "deeppink","sienna",
               "gold", "olivedrab", "mediumspringgreen", "navy", "plum", "cadetblue", "darkmagenta"]
     fig = plt.figure(figsize=(10,8), facecolor='white')
     for i in range (0,len(PlayersName)):
@@ -82,8 +84,7 @@ def performance_polygon_vs_player(PlayersName):
         
         # Player = AdDisp[AdDisp.Year.eq(2020)]
     
-        properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB", "PTS", "3PA", ]
-        values = np.random.uniform(5,9,len(properties))
+
     
         values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB"], Player["PTS"], Player["3PA"]]
         #values2 = [Player2['OWS'], Player2['DWS'], Player2['AST'], Player2["TS%"], Player2["TRB%"], Player2["PTS"], Player2["3PA"]]
@@ -96,7 +97,7 @@ def performance_polygon_vs_player(PlayersName):
     
         points = [(x,y) for x,y in zip(t,values1)]
         points.append(points[0])
-        points = np.array(points)
+        points = np.array(points, dtype=object)
         codes = [path.Path.MOVETO,] + \
                 [path.Path.LINETO,]*(len(values) -1) + \
                 [ path.Path.CLOSEPOLY ]
@@ -129,7 +130,7 @@ def performance_polygon_vs_player(PlayersName):
     plt.show()
 
 
-PlayerName='Chandler Parsons'
+PlayerName= "Jerian Grant"
 #PlayerName5= "Buddy Hield"
 PlayerName6="Thabo Sefolosha"
 #performance_polygon(PlayerName)
@@ -137,4 +138,7 @@ PlayerName3 = "Mikal Bridges"
 PlayerName4 = "Cedi Osman"
 
 
-list_of_player = ["Chandler Parsons", "Thabo Sefolosha", "Cedi Osman"]
+list_of_player = ["Cody Zeller", "Willie Cauley-Stein", "Nerlens Noel", "Taj Gibson", "Ian Mahinmi"]
+list_of_player2 = ["Gordon Hayward", "Khris Middleton"]
+list_of_player3 = ["Victor Oladipo", "Jayson Tatum"]
+performance_polygon_vs_player(list_of_player)

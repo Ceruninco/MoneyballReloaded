@@ -1,26 +1,53 @@
 Refaire un DBSCAN sur les données restantes:
-	-CErtains joueurs sont entre deux styles => on peut signer un joueur dont la somme de l'appartenance à deux clusters correspondants à nos 2 besoins métiers principaux est sup a 0.x
+	-CErtains joueurs sont entre deux styles => on peut signer un joueur dont la somme de l'appartenance à deux clusters correspondants à nos 2 besoins métiers principaux est sup a 0.x => trop de combinaisons 
 
 
 Appliquer FCM sur le bruit/clusters faibles apres le DBSCAN:
-	-Trouver des joueurs qui pourraient répondre à plusieurs pb métier,sans forcement etre uniquement dans un seul cluster
+	-Trouver des joueurs qui pourraient répondre à plusieurs pb métier,sans forcement etre uniquement dans un seul cluster => FAIT
 
 
 Adapter a l'equipe:
-	-Trouver les joueurs au profil similaire dans une même équipe
-	-Trouver les profils manquants
+	-Trouver les joueurs au profil similaire dans une même équipe => clusters trop petit
+	-Trouver les profils manquants => clusters trop petit
 
 Evaluer la qualité d'un cluster:
 
-	-Calculer dispersion des postes dans un cluster données
-	-Appliquer polygone sur les joueurs similaires trouvés
-	-
+	-Calculer dispersion des postes dans un cluster données => plutot dispersion de la taille => A scrapper!!
+	-Appliquer polygone sur les joueurs similaires trouvés => FAIT
 
 
 Score de similarité entre les joeurs:
 	- Distance entre les deux points d'un cluster? 
 	- Aire entre les deux polygones? 
 
-Polygone Moy par equipe pour comparer 2 equipes
+Polygone Moy par equipe pour comparer 2 equipes => Autant prendre les stats par equipe direct
 
-- generer le polygone ppur tous les clusters
+
+- generer le polygone ppur tous les clusters => FAIT
+
+
+-ATTENTION JOUEURS PRÉSENTS DANS PLUSIEURS CLUSTERS => FAIT
+
+=> FAIRE UNE MATRICE DE DISSIMILARITÉ ENTRE CHAQUE JOUEUR? 
+=> FAIRE K MEANS POUR TOUS LES JOUEURS (RESTANTS? Q) ? 
+=> ATTENTION => ON COMPTE EN DOUBLE LES STATS DES JOUEURS QUI ONT ÉTÉ TRANSFÉRÉ PENDANT LA SAISON => FAIT
+=> rajouter FT%? 
+
+=> ENLEVER LES N PLUS MAUVAIS CLUSTERS (EN TERME DE DISTANCE MOYENNE ENTRE LES JOUEURS) ? 
+=> feature: retravailler la défense
+
+=> faire du fcm direct sur les donnes sans DBSCAN? 
+=> augmenter le nb d'elements max par cluster pour fcm
+
+
+
+********web app********
+
+=> FAIRE UNE APP WEB QUI PRENDS EN PARAM: TAILLE, QUELS ASPECTS DU JEU (REB, PTS, AST, ETC..) VOUS INTERESSE, NB DE GROUPE MAX QUE L'USER VEUT, NB MAX DE JOUEURS PAR CLUSTER. sI ON UTILISE LES PARAMS PAR DÉFAUT ON PEUT DIRECTEMENT RETROUVER LE OU LES JOUEURS QUI LUI RESSEMBLE LE PLUS AVEC LES POLYGONES POUR LES FEATURES DEMANDÉES
+
+++ LES VALEURS QU'ON AURA TROUVÉ SERONT PAR DEFAULT MAIS L'USER POURRA LES CHANGER
+***********************
+
+
+=> attention aux joueurs jouant peu de match sur le total qu'ils auraient pu faire => mieux que de filtrer par min de minutes jouées ou matchs joués
+

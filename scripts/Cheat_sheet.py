@@ -98,6 +98,10 @@ df = df[~df['col'].isin(list_of_values)]
 df = df["Nomcol"].tolist()
 
 
+# faire une selection sur les rows avec plusieurs conditions => ATTENTION AUX PARENTHESES ET AUX OP BINAIRES
+
+agg_advanced = agg_advanced.loc[(agg_advanced["MP"]["sum"] > 2500) & (agg_advanced["G"]["sum"] > 100)]
+
  #########################################################
  ############# MACHINE LEARNING WITH SKLEARN #############
  #########################################################

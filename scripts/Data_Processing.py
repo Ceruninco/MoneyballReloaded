@@ -32,6 +32,13 @@ team_and_player = team_and_player[["Player", "final_team", "Pos"]]
 team_and_player = team_and_player.drop_duplicates(subset=['Player'])
 
 
+# on enleve les lignes TOT pour les joueurs qui ont été tranféré en cours de saison: 
+df_2016 = df_2016[df_2016["Tm"] != "TOT"]
+df_2017 = df_2017[df_2017["Tm"] != "TOT"]
+df_2018 = df_2018[df_2018["Tm"] != "TOT"]
+df_2019 = df_2019[df_2019["Tm"] != "TOT"]
+df_2020 = df_2020[df_2020["Tm"] != "TOT"]
+
 # on ne garde que les colonnes qui nous interesse
 basic_stats_2016 = df_2016.loc[:, ['Player', 'G', 'MP', 'FGA', '3P', '3PA', '2P', '2PA', 'FT', 'FTA', 'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS'] ]
 basic_stats_2017 = df_2017.loc[:, ['Player', 'G', 'MP', 'FGA', '3P', '3PA', '2P', '2PA', 'FT', 'FTA', 'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS'] ]
@@ -44,12 +51,15 @@ basic_stats_2020 = df_2020.loc[:, ['Player', 'G', 'MP', 'FGA', '3P', '3PA', '2P'
 basic_stats = basic_stats_2016.append(basic_stats_2017).append(basic_stats_2018).append(basic_stats_2019).append(basic_stats_2020)
 
 
+
 # on group par joueur
 summed_basic_stats = basic_stats.groupby(['Player']).sum()
 
 
 # on enleve ceux qui ont joué moins de 100 matches
-summed_basic_stats = summed_basic_stats[summed_basic_stats["G"] > 100 ]
+#summed_basic_stats = summed_basic_stats.loc[summed_basic_stats["MP"] > 2000 & summed_basic_stats["G"] > 100]
+
+summed_basic_stats = summed_basic_stats.loc[ (summed_basic_stats['G'] > 100) | (summed_basic_stats['MP'] > 2500) ]
 
 # on arrondi a un chiffre après la virgule
 def custom_round_up(x, y):
@@ -85,6 +95,14 @@ ad_2017["Player"] = ad_2017["Player"].apply(unidecode)
 ad_2018["Player"] = ad_2018["Player"].apply(unidecode)
 ad_2019["Player"] = ad_2019["Player"].apply(unidecode)
 ad_2020["Player"] = ad_2020["Player"].apply(unidecode)
+
+
+# on enleve les lignes TOT pour les joueurs qui ont été tranféré en cours de saison: 
+ad_2016 = ad_2016[ad_2016["Tm"] != "TOT"]
+ad_2017 = ad_2017[ad_2017["Tm"] != "TOT"]
+ad_2018 = ad_2018[ad_2018["Tm"] != "TOT"]
+ad_2019 = ad_2019[ad_2019["Tm"] != "TOT"]
+ad_2020 = ad_2020[ad_2020["Tm"] != "TOT"]
 
 
 # on ne garde que les colonnes qui nous intéresse
@@ -133,8 +151,9 @@ agg_advanced =summed_ad.groupby(['Player']).agg(agr)
 
 
 # on enleve ceux qui ont joué moins de 100 matches => c'est pour cela qu'on a moins de joueurs à la fin!!!!
-agg_advanced = agg_advanced[agg_advanced["G"]['sum'] > 100 ]
+agg_advanced = agg_advanced.loc[(agg_advanced["MP"]["sum"] > 2500) | (agg_advanced["G"]["sum"] > 100)]
 
+#agg_advanced = agg_advanced.loc[(agg_advanced['G']["sum"] > 100) & (agg_advanced['MP']["sum"] > 2500) ]
 
 # on ramene les stats par matches
 games = agg_advanced["G"]["sum"]
