@@ -37,10 +37,12 @@ results = results.sort_values(by=[ "nb_clusters"], ascending = False)
 results.to_csv("../csv/silhouette_search.csv", sep =';')
 """
 
+nb_players_per_cluster_dbscan = 2
+
 pca = PCA(n_components=0.85, svd_solver = 'full')
 pcabis = pca.fit(clustering_df)
 dataSet = pcabis.transform(clustering_df)
-model = DBSCAN(eps=0.22, min_samples=2)
+model = DBSCAN(eps=0.22, min_samples=nb_players_per_cluster_dbscan)
 model.fit(dataSet)
 result = pcabis.inverse_transform(dataSet)
 res = np.zeros((0,3))
@@ -53,15 +55,13 @@ dbscan_cluster.columns = ["Player", "Cluster", "Pos"]
 
 dbscan_cluster = dbscan_cluster.drop(columns="Pos")
 
-nb_max_players_per_cluster_dbscan = 4
-
 # we remove the noise from the dbscan clusters
 dbscan_cluster = dbscan_cluster[dbscan_cluster["Cluster"] != -1]
 
 # we also considere that the maximum number of player of a consisten cluster is about 4
 # we need to consider as noise the players in big cluster
 nb_of_players_per_cluster = dbscan_cluster.groupby("Cluster").agg("count")
-too_big_clusters = nb_of_players_per_cluster[nb_of_players_per_cluster["Player"] > nb_max_players_per_cluster_dbscan]["Player"]
+too_big_clusters = nb_of_players_per_cluster[nb_of_players_per_cluster["Player"] > nb_players_per_cluster_dbscan]["Player"]
 dbscan_cluster = dbscan_cluster.loc[~dbscan_cluster['Cluster'].isin(too_big_clusters.index)]
 
 nb_of_clusters_from_filtered_dbscan = len(dbscan_cluster.Cluster.unique())
@@ -86,8 +86,11 @@ df_fcm = df_fcm.loc[:,(df_fcm.columns != "Player")]
 
 # Computation
 #nb_cluster_fuzzy = round(len(unclustered_players.index)/nb_max_players_per_cluster)
-nb_cluster_fuzzy = 52
+nb_cluster_fuzzy = 60
 fuzzy_kmeans = FuzzyKMeans(k=nb_cluster_fuzzy, m=1.1)
+
+# we can also directly compute fcm on the data (and not on the dbscan noise)
+
 fuzzy_kmeans.fit(df_fcm)
 fuzzy_clusters = pd.DataFrame(fuzzy_kmeans.fuzzy_labels_)
 

@@ -193,7 +193,7 @@ NB Joueurs clusterisées au total: 204
 
 => Aussi bien que le précendent => Ce sont les deux meilleurs pour l'instant 
 
-Intrus: (Millsap, Blake Griffin T, John Coll ins, Paul George T, Lebron T, Westbrrok/simmons/jokic, Batum T, Sexton T, MayMichael Green T, Gasol T, Hollis Jefferson T, )
+Intrus: (Millsap, Blake Griffin T, John Collins, Paul George T, Lebron T, Westbrrok/simmons/jokic, Batum T, Sexton T, MayMichael Green T, Gasol T, Hollis Jefferson T, )
 
 
 TEST 13:
@@ -294,4 +294,170 @@ PENSER A SE FIXER SUR UNE VAL DE NB CLUSTER FUZZY ET JOUER SUR UN AUTRE PARAM
 
 
  (35, 40)  > (45, 50) > (52, 55)
+
+
+
+
+********** on augmente le nb de joueur par cluster fcm
+
+TEST 17:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 40
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 4
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 244
+
+
+=> Pas top...
+
+=> foireux IIIIIIIII
+
+=> Intrus: (Millsap, Jason Tatum, Trae Young, Blake griffin, JJ barea, ......)
+
+
+TEST 18:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 4
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 284
+
+
+=> A eviter
+
+=> foireux IIIIIIIIIIIII
+
+=> Intrus: (Ryan Anderson, Derrick Favors, Courtney lee, Hollins jefferson, 		)
+
+
+TEST 19:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 55
+nb_max_players_per_cluster_dbscan : 4
+nb_max_players_per_cluster_fcm: 2
+
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 194
+
+
+=> Moyen
+
+=> foireux 10
+
+=> Intrus:   Josh jackson, Trae Young, Embiid,Murray, Wiggins, ben simmons, Harisson barnes, Westbrrok, Gasol, Donovan Mitchell, 
+
+
+TEST 20:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 60
+nb_max_players_per_cluster_dbscan : 2
+nb_max_players_per_cluster_fcm: 2
+
+NB Clusters DBSCAN : 26
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 172
+NB Clusters: 60 + 26 = 86
+
+=> CBN de foireux?  => 14 => 16%
+
+
+
+TEST 21:
+
+PCA: 0.85
+eps: 0.22
+Min points: 2
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 60
+nb_max_players_per_cluster_dbscan : 3
+nb_max_players_per_cluster_fcm: 3
+Clusters DBSCAN : 34
+total clusters = 94
+	
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 256
+
+=> CBN de foireux => 19 => 20%
+
+
+
+TEST 22:
+
+PCA: 0.85
+eps: 0.22
+Min points: 3
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 40
+nb_max_players_per_cluster_dbscan : 3
+nb_max_players_per_cluster_fcm: 3
+Clusters DBSCAN : 8
+total clusters = 40 + 8 = 48
+	
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 144
+
+=> CBN de foireux => 13 => 27%
+
+
+****************************** Essayer de faire direct KMEANS ou FCM sans filtrer par DBSCAN ************************
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 60
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 180
+
+Nb de Foireux => 12 => 20%
+
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 60
+nb_max_players_per_cluster_fcm: 4
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 240
+
+Nb de Foireux => III...... => 4 joueurs pas cluster c'est beaucoup trop!!!
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 80
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 240
+
+Nb de Foireux => 16 => 20 %
 

@@ -9,7 +9,6 @@ final_advanced = final_advanced.drop(columns=["G"])
 
 
 #Pour concat des df en ligne ou en colonne
-
 final_advanced = pd.concat([final_advanced, games], axis=1)
 
 
