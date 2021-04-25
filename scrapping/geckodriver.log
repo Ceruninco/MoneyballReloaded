@@ -379,3 +379,621 @@ JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError
 1612894330430	Marionette	INFO	Listening on port 36155
 1612894330513	Marionette	WARN	TLS certificate errors will be ignored for this session
 1612894336329	Marionette	INFO	Stopped listening on port 36155
+1618039212724	geckodriver	INFO	Listening on 127.0.0.1:58621
+1618039213736	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileIPNgjg"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039216784	Marionette	INFO	Listening on port 40457
+1618039216866	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 109 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 109 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 109 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 109 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618039370929	geckodriver	INFO	Listening on 127.0.0.1:52285
+1618039370932	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilearguwe"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039373281	Marionette	INFO	Listening on port 44039
+1618039373357	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1618039378925	Marionette	INFO	Stopped listening on port 44039
+console.info: MINT: main/search-config update being skipped
+1618039496001	geckodriver	INFO	Listening on 127.0.0.1:53961
+1618039496004	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZfDLKb"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039498794	Marionette	INFO	Listening on port 46243
+1618039498839	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 197 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 197 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 197 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 197 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1618039509625	Marionette	INFO	Stopped listening on port 46243
+1618039533827	Marionette	INFO	Stopped listening on port 40457
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618039619503	geckodriver	INFO	Listening on 127.0.0.1:47161
+1618039620517	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejNbeuJ"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039623430	Marionette	INFO	Listening on port 35503
+1618039623547	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618039627854	Marionette	INFO	Stopped listening on port 35503
+1618039731561	geckodriver	INFO	Listening on 127.0.0.1:58483
+1618039731579	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKubGU9"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039734735	Marionette	INFO	Listening on port 40643
+1618039734812	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1618039736192	Marionette	INFO	Stopped listening on port 40643
+1618039742720	geckodriver	INFO	Listening on 127.0.0.1:60919
+1618039742723	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekL1VUn"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039745697	Marionette	INFO	Listening on port 36199
+1618039745755	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 277 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 277 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 277 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 277 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+1618039753167	Marionette	INFO	Stopped listening on port 36199
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618039785496	geckodriver	INFO	Listening on 127.0.0.1:57743
+1618039786512	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileOylutY"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039789299	Marionette	INFO	Listening on port 40035
+1618039789344	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618039795707	Marionette	INFO	Stopped listening on port 40035
+1618039848664	geckodriver	INFO	Listening on 127.0.0.1:58793
+1618039848668	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekAmX6p"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039851411	Marionette	INFO	Listening on port 46477
+1618039851496	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618039855939	Marionette	INFO	Stopped listening on port 46477
+1618039869190	geckodriver	INFO	Listening on 127.0.0.1:39357
+1618039869201	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileCzwYBY"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039871879	Marionette	INFO	Listening on port 36513
+1618039871946	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618039879646	Marionette	INFO	Stopped listening on port 36513
+1618039891014	geckodriver	INFO	Listening on 127.0.0.1:43789
+1618039892035	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2YQDcl"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039894611	Marionette	INFO	Listening on port 39925
+1618039894691	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618039899306	Marionette	INFO	Stopped listening on port 39925
+1618039920690	geckodriver	INFO	Listening on 127.0.0.1:53319
+1618039920693	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemX695e"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039923369	Marionette	INFO	Listening on port 37865
+1618039923430	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618039931292	Marionette	INFO	Stopped listening on port 37865
+1618039985656	geckodriver	INFO	Listening on 127.0.0.1:52551
+1618039985659	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileenRpZn"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618039988348	Marionette	INFO	Listening on port 39071
+1618039988393	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 206 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 206 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 206 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 206 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+1618040044597	geckodriver	INFO	Listening on 127.0.0.1:52289
+1618040044601	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebpAAna"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040047232	Marionette	INFO	Listening on port 37381
+1618040047332	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 262 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 262 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 262 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 262 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+1618040054521	Marionette	INFO	Stopped listening on port 37381
+1618040084731	geckodriver	INFO	Listening on 127.0.0.1:50327
+1618040084734	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePzx7DY"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040087322	Marionette	INFO	Listening on port 46787
+1618040087372	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618040091829	Marionette	INFO	Stopped listening on port 46787
+1618040156979	geckodriver	INFO	Listening on 127.0.0.1:36235
+1618040157995	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexpTpQG"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040160734	Marionette	INFO	Listening on port 45375
+1618040160825	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618040165574	Marionette	INFO	Stopped listening on port 45375
+1618040219561	Marionette	INFO	Stopped listening on port 39071
+1618040275979	geckodriver	INFO	Listening on 127.0.0.1:36637
+1618040275985	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUurf6k"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040278653	Marionette	INFO	Listening on port 36843
+1618040278718	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618040283127	Marionette	INFO	Stopped listening on port 36843
+1618040393002	geckodriver	INFO	Listening on 127.0.0.1:48885
+1618040393005	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJ0i5C5"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040395544	Marionette	INFO	Listening on port 45025
+1618040395642	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618040424607	geckodriver	INFO	Listening on 127.0.0.1:58411
+1618040424617	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePlNI6o"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040427766	Marionette	INFO	Listening on port 37537
+1618040427876	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 128 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 128 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 128 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 128 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618040447218	geckodriver	INFO	Listening on 127.0.0.1:50469
+1618040448234	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileObdKxk"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040451455	Marionette	INFO	Listening on port 41795
+1618040451573	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 324 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 324 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 324 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 324 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+1618040468532	Marionette	INFO	Stopped listening on port 41795
+1618040471358	Marionette	INFO	Stopped listening on port 37537
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x3A0144,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+1618040473600	Marionette	INFO	Stopped listening on port 45025
+1618040628805	geckodriver	INFO	Listening on 127.0.0.1:57625
+1618040629809	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile34EMMy"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618040632493	Marionette	INFO	Listening on port 38607
+1618040632571	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618040637975	Marionette	INFO	Stopped listening on port 38607
+1618041232710	geckodriver	INFO	Listening on 127.0.0.1:43157
+1618041233715	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezZWV4k"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618041236260	Marionette	INFO	Listening on port 39911
+1618041236342	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618041240302	Marionette	INFO	Stopped listening on port 39911
+1618041432092	geckodriver	INFO	Listening on 127.0.0.1:55183
+1618041433096	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileyo74EK"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618041436125	Marionette	INFO	Listening on port 35161
+1618041436231	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 71 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 71 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 71 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 71 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618041455474	geckodriver	INFO	Listening on 127.0.0.1:37129
+1618041455477	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKztw3J"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618041458216	Marionette	INFO	Listening on port 42383
+1618041458313	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 343 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 343 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 343 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 343 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618041552837	Marionette	INFO	Stopped listening on port 42383
+
+(firefox:19589): GLib-GObject-WARNING **: 09:59:13.765: ../../../../gobject/gsignal.c:3492: signal name 'load_complete' is invalid for instance '0x7faf7db56c90' of type 'MaiAtkType21'
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618041555091	Marionette	INFO	Stopped listening on port 35161
+1618041711280	geckodriver	INFO	Listening on 127.0.0.1:44993
+1618041711283	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebnLltz"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618041713924	Marionette	INFO	Listening on port 37205
+1618041714014	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 229 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 229 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 229 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 229 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618041794340	Marionette	INFO	Stopped listening on port 37205
+1618041841255	geckodriver	INFO	Listening on 127.0.0.1:46257
+1618041842266	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYGaDna"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618041845062	Marionette	INFO	Listening on port 46581
+1618041845119	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+1618041888222	Marionette	INFO	Stopped listening on port 46581
+1618042073687	geckodriver	INFO	Listening on 127.0.0.1:38263
+1618042074692	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileeweVuf"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042077237	Marionette	INFO	Listening on port 45825
+1618042077325	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618042081152	Marionette	INFO	Stopped listening on port 45825
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618042144531	geckodriver	INFO	Listening on 127.0.0.1:46985
+1618042144534	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemm8EgO"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042147018	Marionette	INFO	Listening on port 34485
+1618042147080	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618042151848	Marionette	INFO	Stopped listening on port 34485
+1618042217547	geckodriver	INFO	Listening on 127.0.0.1:46801
+1618042217550	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEdPaAO"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042219965	Marionette	INFO	Listening on port 44949
+1618042220071	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618042224098	Marionette	INFO	Stopped listening on port 44949
+1618042248922	geckodriver	INFO	Listening on 127.0.0.1:40831
+1618042248925	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletdZtx7"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042251579	Marionette	INFO	Listening on port 39001
+1618042251648	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618042254770	Marionette	INFO	Stopped listening on port 39001
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1618042440454	geckodriver	INFO	Listening on 127.0.0.1:39937
+1618042440457	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2ixGCs"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042443294	Marionette	INFO	Listening on port 44489
+1618042443384	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 245 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 245 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 245 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 245 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618042487451	Marionette	INFO	Stopped listening on port 44489
+1618042588887	geckodriver	INFO	Listening on 127.0.0.1:50669
+1618042589905	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile4Ev7Ck"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042592435	Marionette	INFO	Listening on port 44809
+1618042592555	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 38 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+1618042638487	geckodriver	INFO	Listening on 127.0.0.1:51797
+1618042638492	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepQytdx"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618042641288	Marionette	INFO	Listening on port 39291
+1618042641334	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 278 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 278 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 278 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 278 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/contact-form-7/includes/js/index.js?screx=1&sxcb=9a&ver=5.4, line 1: TypeError: window.wp is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+1618042662911	Marionette	INFO	Stopped listening on port 39291
+1618042664352	Marionette	INFO	Stopped listening on port 44809
+1618058195919	geckodriver	INFO	Listening on 127.0.0.1:59805
+1618058195923	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVDktkc"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618058200027	Marionette	INFO	Listening on port 46581
+1618058200077	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 78 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 78 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 78 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 78 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+1618058229769	Marionette	INFO	Stopped listening on port 46581
+1618058231306	geckodriver	INFO	Listening on 127.0.0.1:52313
+1618058231319	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6XjklL"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618058234800	Marionette	INFO	Listening on port 36191
+1618058234878	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 313 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 313 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 313 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 313 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?screx=1&sxcb=9a&ver=1.9.2, line 1: TypeError: a is not a function
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?screx=1&sxcb=9a&ver=2.2.0, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?screx=1&sxcb=9a&ver=2.0.17-1617135091, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/jquery/jquery-migrate.min.js?screx=1&sxcb=9a&ver=3.3.2, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/i18n.min.js?screx=1&sxcb=9a&ver=db9a9a37da262883343e941c3731bc67, line 2: TypeError: w is undefined
+JavaScript error: https://basketballnoise.com/wp-includes/js/dist/api-fetch.min.js?screx=1&sxcb=9a&ver=a783d1f442d2abefc7d6dbd156a44561, line 2: TypeError: h.a is undefined
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
+
+1618058394234	Marionette	INFO	Stopped listening on port 36191
+1618059702194	geckodriver	INFO	Listening on 127.0.0.1:60853
+1618059703215	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilea3dnIJ"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618059705946	Marionette	INFO	Listening on port 36351
+1618059706074	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1618059710942	Marionette	INFO	Stopped listening on port 36351
+1618061229037	geckodriver	INFO	Listening on 127.0.0.1:58925
+1618061230040	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejBI0AC"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618061232845	Marionette	INFO	Listening on port 44847
+1618061232877	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 100 > injectedScript, line 2: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 100 > injectedScript, line 2: ReferenceError: _ is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 100 > injectedScript, line 5: ReferenceError: wp is not defined
+JavaScript error: https://basketballnoise.com/nba-players-height-2019-2020/ line 100 > injectedScript, line 2: ReferenceError: wp is not defined
+1618061253102	Marionette	INFO	Stopped listening on port 44847
+1618061261077	geckodriver	INFO	Listening on 127.0.0.1:45593
+1618061261080	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRz0qmJ"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is FR
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1618061263797	Marionette	INFO	Listening on port 37821
+1618061263939	Marionette	WARN	TLS certificate errors will be ignored for this session
+1618061269731	Marionette	INFO	Stopped listening on port 37821

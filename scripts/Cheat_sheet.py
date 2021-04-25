@@ -3,6 +3,18 @@
 final_advanced = agg_ad.div((games) , axis=0)
 df = df.mul(games, axis=0)
 
+
+# pour multiplier toute une col/ligne par le meme scalaire
+
+ df['quantity'] = df['quantity'].apply(lambda x: x*-1)  
+
+
+#access the nth element of df
+df.iloc[n]
+
+#access df like a 2D array
+df.iloc[n][m]
+
 # pour drop une colonne
 
 final_advanced = final_advanced.drop(columns=["G"])
@@ -10,6 +22,9 @@ final_advanced = final_advanced.drop(columns=["G"])
 
 #Pour concat des df en ligne ou en colonne
 final_advanced = pd.concat([final_advanced, games], axis=1)
+
+#from dict of dict to list of list
+[list(z.values()) for y,z in x.items()]
 
 
 #Pour aggreger des données avec des fonctions différentes selon la colonne
@@ -21,7 +36,7 @@ agg_ad =summed_ad.groupby(['Player']).agg(agr)
 
 #Pour appliquer une fonction a tous les éléments d'un df
 
-final_advanced = final_advanced.apply(custom_round_up, args=[2])
+final_advanced = final_advanced.apply(round, args=[2])
 
 # pour renommer les colonnes d'un df
 
@@ -29,7 +44,6 @@ res.columns = ["Player", "G", "MP", "PER", "TS%", "3PAr", "TRB%", "USG%", "OWS",
 
 
 # pour ne garder que certaines col d'un df => reste des df et non des séries
-
 df = df.loc[:,(df.columns != "Player") & (df.columns != "G")]
 
 df = df[["NomCol1", "NomCol2"]]
@@ -88,8 +102,8 @@ df_fcm = pd.merge(df_fcm, unclustered_players, on="Player")
 
 df = df.sort_values(by=["col_name"])
 
-# to remove rows from df which column value are not in a list
-
+# to keep rows from df which column value are not in a list
+			
 df = df[~df['col'].isin(list_of_values)]
 
 
@@ -97,9 +111,26 @@ df = df[~df['col'].isin(list_of_values)]
 df = df["Nomcol"].tolist()
 
 
+
+#to set the df index
+df.set_index("name_col")
+
+#rename one single col
+df1 = df.rename(columns={'Name': 'EmpName'})    
+
+
 # faire une selection sur les rows avec plusieurs conditions => ATTENTION AUX PARENTHESES ET AUX OP BINAIRES
 
 agg_advanced = agg_advanced.loc[(agg_advanced["MP"]["sum"] > 2500) & (agg_advanced["G"]["sum"] > 100)]
+
+
+# to convert a dict of dict into a list of list of number => works under the assomption that keys are in the same order in both dimension
+only_number_matrix = [list(value.values()) for key, value in dict_of_dict.items()]
+
+
+# extract value from df
+df.iloc[0]['col']
+
 
  #########################################################
  ############# MACHINE LEARNING WITH SKLEARN #############

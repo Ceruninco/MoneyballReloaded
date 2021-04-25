@@ -8,23 +8,32 @@ from unidecode import unidecode
 
 csv_files_location = "../csv/"
 
+def clean_names(df, col_name):
+    df[col_name] = df[col_name].apply(str.replace, args=[" Jr.", ""])
+    df[col_name] = df[col_name].apply(str.replace, args=[" Sr.", ""])
+    df[col_name] = df[col_name].apply(str.replace, args=[" III", ""])
+    df[col_name] = df[col_name].apply(str.replace, args=[" II", ""])
+    df[col_name] = df[col_name].apply(unidecode)
+    df[col_name] = df[col_name] = df[col_name].apply(str.replace, args=[".", ""])
+    return df
+
+
 # on recupere les stats de base
 df_2016 = pd.read_csv(csv_files_location+'NBA_totals_2015-2016.csv')
 df_2017 = pd.read_csv(csv_files_location+'NBA_totals_2016-2017.csv')
 df_2018 = pd.read_csv(csv_files_location+'NBA_totals_2017-2018.csv')
 df_2019 = pd.read_csv(csv_files_location+'NBA_totals_2018-2019.csv')
 df_2020 = pd.read_csv(csv_files_location+'NBA_totals_2019-2020.csv')
-    
-# on enleve les accents et caractères spéciaux du nom des joueurs pour les grouper
-df_2016["Player"] = df_2016["Player"].apply(unidecode)
-df_2017["Player"] = df_2017["Player"].apply(unidecode)
-df_2018["Player"] = df_2018["Player"].apply(unidecode)
-df_2019["Player"] = df_2019["Player"].apply(unidecode)
-df_2020["Player"] = df_2020["Player"].apply(unidecode)
+
+df_2016 = clean_names(df_2016, "Player")
+df_2017 = clean_names(df_2017, "Player")
+df_2018 = clean_names(df_2018, "Player")
+df_2019 = clean_names(df_2019, "Player")
+df_2020 = clean_names(df_2020, "Player")
 
 
 # on recupere l'équipe finale de chaque joueur de cette année
-# on fait d'une pierre deux coups en récuperant les noms et en filtrant les joueurs ayant pris leur retraite
+# on fait d'une pierre deux coups en récuperant les noms et en filtrant les joueurs retraités
 # avant la saison 2020
 team_and_player = df_2020[["Player", "Tm", 'Pos']]
 team_and_player["final_team"] = team_and_player.groupby('Player')['Tm'].transform('last')
@@ -50,15 +59,11 @@ basic_stats_2020 = df_2020.loc[:, ['Player', 'G', 'MP', 'FGA', '3P', '3PA', '2P'
 # on concatene en hauteur tous les df
 basic_stats = basic_stats_2016.append(basic_stats_2017).append(basic_stats_2018).append(basic_stats_2019).append(basic_stats_2020)
 
-
-
 # on group par joueur
 summed_basic_stats = basic_stats.groupby(['Player']).sum()
 
 
-# on enleve ceux qui ont joué moins de 100 matches
-#summed_basic_stats = summed_basic_stats.loc[summed_basic_stats["MP"] > 2000 & summed_basic_stats["G"] > 100]
-
+# on enleve ceux qui ont joué moins de 100 matches ou 2500 Minutes
 summed_basic_stats = summed_basic_stats.loc[ (summed_basic_stats['G'] > 100) | (summed_basic_stats['MP'] > 2500) ]
 
 # on arrondi a un chiffre après la virgule
@@ -90,12 +95,11 @@ ad_2019 = pd.read_csv(csv_files_location+'NBA_advanced_2018-2019.csv')
 ad_2020 = pd.read_csv(csv_files_location+'NBA_advanced_2019-2020.csv')
 
 # on enleve les accents et caractères spéciaux du nom des joueurs pour les grouper
-ad_2016["Player"] = ad_2016["Player"].apply(unidecode)
-ad_2017["Player"] = ad_2017["Player"].apply(unidecode)
-ad_2018["Player"] = ad_2018["Player"].apply(unidecode)
-ad_2019["Player"] = ad_2019["Player"].apply(unidecode)
-ad_2020["Player"] = ad_2020["Player"].apply(unidecode)
-
+ad_2016 = clean_names(ad_2016, "Player")
+ad_2017 = clean_names(ad_2017, "Player")
+ad_2018 = clean_names(ad_2018, "Player")
+ad_2019 = clean_names(ad_2019, "Player")
+ad_2020 = clean_names(ad_2020, "Player")
 
 # on enleve les lignes TOT pour les joueurs qui ont été tranféré en cours de saison: 
 ad_2016 = ad_2016[ad_2016["Tm"] != "TOT"]
@@ -155,13 +159,25 @@ agg_advanced = agg_advanced.loc[(agg_advanced["MP"]["sum"] > 2500) | (agg_advanc
 
 #agg_advanced = agg_advanced.loc[(agg_advanced['G']["sum"] > 100) & (agg_advanced['MP']["sum"] > 2500) ]
 
+#lets retrieve the players height
+heights = pd.read_csv(csv_files_location+"players_height.csv")
+heights = clean_names(heights, "Name")
+heights = heights[["Name", "Height (cm)"]]
+heights = heights.rename(columns={"Name": "Player"})
+
+
 # on ramene les stats par matches
 games = agg_advanced["G"]["sum"]
 final_advanced = agg_advanced.div((games) , axis=0)
 final_advanced = final_advanced.drop(columns=["G"])
 final_advanced = final_advanced.apply(custom_round_up, args=[2])
 final_advanced = pd.concat([games, final_advanced], axis=1)
-final_advanced.columns = ["G", "MP", "PER", "TS%", "3PAr", "TRB%", "USG%", "OWS", "DWS"]
+
+# we add the players height
+final_advanced = pd.merge(final_advanced, heights, on="Player")
+final_advanced = final_advanced.set_index("Player")
+
+final_advanced.columns = ["G", "MP", "PER", "TS%", "3PAr", "TRB%", "USG%", "OWS", "DWS", "Height"]
 
 
 # Scaling
@@ -170,7 +186,15 @@ final_advanced_scaled = final_advanced_scaled / ( final_advanced_scaled.max() - 
 
 # on fusionne les stats avancées, les stats de base et les noms des joueurs
 final = pd.merge(final_advanced_scaled, avg_stats_36_minutes_scaled, on="Player")
+
+# by merging, we remove the retired players
 final = pd.merge(team_and_player, final, on="Player")
 
 #export to csv
 final.to_csv("../csv/players_stats.csv")
+
+
+
+
+
+

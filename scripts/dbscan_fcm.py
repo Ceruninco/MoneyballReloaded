@@ -3,12 +3,14 @@
 
 import numpy as np
 import pandas as pd
-import seaborn as sns
+#import seaborn as sns
+import sklearn
 from sklearn_extensions.fuzzy_kmeans import FuzzyKMeans
 from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 from polygone import performance_polygon_vs_player
-sns.set()
+import warnings
+#sns.set()
 
 # need to install kneebow and mlxtend
 
@@ -19,9 +21,8 @@ clustering_df = df.drop(columns=["Unnamed: 0","Player", "final_team","Pos"])
 
 results = pd.DataFrame(data = None, columns = ['epsilon' , 'min_size', 'score'],dtype=np.float64) 
 
-"""
+
 for var_portion in np.arange(start = 0.6,stop=0.95,step=0.05,dtype=np.float64):
-    print(var_portion)
     pca = PCA(n_components=var_portion, svd_solver = 'full')
     pcabis = pca.fit(clustering_df)
     reducedDataSet = pcabis.transform(clustering_df)
@@ -33,11 +34,33 @@ for var_portion in np.arange(start = 0.6,stop=0.95,step=0.05,dtype=np.float64):
                 score = sklearn.metrics.silhouette_score(clustering_df,m.labels_)
                 results = results.append({'var_portion' : var_portion, 'epsilon' : eps , 'min_size' : size , 'score' : score, 'nb_clusters' : max(m.labels_)+1}, ignore_index=True)
 
-results = results.sort_values(by=[ "nb_clusters"], ascending = False)
+results = results.sort_values(by=["score"], ascending = False)
 results.to_csv("../csv/silhouette_search.csv", sep =';')
-"""
 
-nb_players_per_cluster_dbscan = 2
+optimal_parameters = results.head(1)
+optimal_parameters
+
+pca_value = optimal_parameters.iloc[0]["var_portion"]
+epsilon = optimal_parameters.iloc[0]["epsilon"]
+min_size = optimal_parameters.iloc[0]["min_size"]
+
+pca = PCA(n_components=pca_value, svd_solver = 'full')
+pcabis = pca.fit(clustering_df)
+dataSet = pcabis.transform(clustering_df)
+model = DBSCAN(eps=epsilon, min_samples=min_size)
+model.fit(dataSet)
+result = pcabis.inverse_transform(dataSet)
+res = np.zeros((0,3))
+dbscan_cluster = pd.DataFrame(res)
+number_of_players = df.shape[0]
+for k in range(number_of_players):
+    row = [[df['Player'].values[k], model.labels_[k], df["Pos"].values[k]]]
+    dbscan_cluster = dbscan_cluster.append(row)
+dbscan_cluster.columns = ["Player", "Cluster", "Pos"]
+
+
+
+nb_players_per_cluster_dbscan = 4
 
 pca = PCA(n_components=0.85, svd_solver = 'full')
 pcabis = pca.fit(clustering_df)
@@ -53,12 +76,15 @@ for k in range(df.shape[0]):
     #cluster = cluster.sort_values(by=[1], ascending = False)
 dbscan_cluster.columns = ["Player", "Cluster", "Pos"]
 
+
+
+
 dbscan_cluster = dbscan_cluster.drop(columns="Pos")
 
 # we remove the noise from the dbscan clusters
 dbscan_cluster = dbscan_cluster[dbscan_cluster["Cluster"] != -1]
 
-# we also considere that the maximum number of player of a consisten cluster is about 4
+# we also considere that the maximum number of player of a consistent cluster is about 4
 # we need to consider as noise the players in big cluster
 nb_of_players_per_cluster = dbscan_cluster.groupby("Cluster").agg("count")
 too_big_clusters = nb_of_players_per_cluster[nb_of_players_per_cluster["Player"] > nb_players_per_cluster_dbscan]["Player"]
@@ -86,7 +112,7 @@ df_fcm = df_fcm.loc[:,(df_fcm.columns != "Player")]
 
 # Computation
 #nb_cluster_fuzzy = round(len(unclustered_players.index)/nb_max_players_per_cluster)
-nb_cluster_fuzzy = 60
+nb_cluster_fuzzy = 35
 fuzzy_kmeans = FuzzyKMeans(k=nb_cluster_fuzzy, m=1.1)
 
 # we can also directly compute fcm on the data (and not on the dbscan noise)
@@ -101,7 +127,7 @@ print("At first we clustered "+str(len(dbscan_cluster.index))+" players with DSB
 
 final_clusters = dbscan_cluster
 
-nb_max_players_per_cluster_fcm = 3
+nb_max_players_per_cluster_fcm = 4
 
 
 for i in range(nb_cluster_fuzzy):
@@ -125,11 +151,21 @@ for i in range(nb_cluster_fuzzy):
     final_clusters = pd.concat([final_clusters, sets], axis=0)
 
 
+# ignore warnings for the polygone display
+warnings.filterwarnings("ignore")
+
+nb_of_cluster_printed = 0
+nb_of_players_clustered = 0
+
 #now let's print the overlapping polygones for each cluster
 for i in final_clusters.Cluster.unique():   
-    players_to_draw = final_clusters[final_clusters["Cluster"] == i]["Player"].tolist()
-    performance_polygon_vs_player(players_to_draw)
+    players_to_draw = dbscan_cluster[dbscan_cluster["Cluster"] == i]["Player"].tolist()
+    properties = ['OWS', 'DWS', 'AST','TS%', "TRB", "PTS", "3PA" ]
+    if (len(players_to_draw) < 10):
+        nb_of_cluster_printed+=1
+        nb_of_players_clustered += len(players_to_draw)
+        performance_polygon_vs_player(players_to_draw, properties)
 
 
-print("We clustered "+str(len(clustered_players.index))+" players with filtered DBSCAN in "+str(nb_of_clusters_from_filtered_dbscan)+" clusters.")
-print("Now we have "+str(len(final_clusters.index))+" players clustered out of "+str(len(clustering_df.index))+" players.")
+print("We clustered "+str(nb_of_players_clustered)+" players with DBSCAN in "+str(nb_of_cluster_printed)+" clusters out of "+str(len(df.index))+" players.")
+#print("Now we have "+str(len(final_clusters.index))+" players clustered out of "+str(len(clustering_df.index))+" players.")

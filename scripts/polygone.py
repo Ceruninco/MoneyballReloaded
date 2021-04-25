@@ -17,8 +17,8 @@ PlayerStats="MP"
 NormalizeData = pd.read_csv("../csv/players_stats.csv", delimiter =",");
 
 
-""" a function which computes a performance polygon for a specific player using three parameters
- (Offensive Win Share, Defensive Win Share, Win Share)"""
+# a function which computes a performance polygon for a specific player using three parameters
+
 
 def performance_polygon(PlayerName):
     Player=10*NormalizeData[NormalizeData.Player.eq(PlayerName)]
@@ -72,9 +72,9 @@ def performance_polygon(PlayerName):
     plt.show()
     
     
-def performance_polygon_vs_player(PlayersName):
-    properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB", "PTS", "3PA", ]
-    values = np.random.uniform(5,9,len(properties))
+def performance_polygon_vs_player(PlayersName, criterias):
+    #properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB", "PTS", "3PA" ]
+    values = np.random.uniform(5,9,len(criterias))
     colors = ["blue", "red", "green", "orange", "brown", "deeppink","sienna",
               "gold", "olivedrab", "mediumspringgreen", "navy", "plum", "cadetblue", "darkmagenta"]
     fig = plt.figure(figsize=(10,8), facecolor='white')
@@ -85,14 +85,14 @@ def performance_polygon_vs_player(PlayersName):
         # Player = AdDisp[AdDisp.Year.eq(2020)]
     
 
-    
-        values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB"], Player["PTS"], Player["3PA"]]
+        values1 = [Player[item] for item in criterias]
+        #values1 = [Player['OWS'], Player['DWS'], Player['AST'], Player["TS%"], Player["TRB"], Player["PTS"], Player["3PA"]]
         #values2 = [Player2['OWS'], Player2['DWS'], Player2['AST'], Player2["TS%"], Player2["TRB%"], Player2["PTS"], Player2["3PA"]]
         matplotlib.rc('axes', facecolor = 'white')
 
         axes = plt.subplot(111, polar=True)
         
-        t = np.arange(0,2*np.pi,2*np.pi/len(properties))
+        t = np.arange(0,2*np.pi,2*np.pi/len(criterias))
         plt.xticks(t, [])
     
         points = [(x,y) for x,y in zip(t,values1)]
@@ -118,27 +118,19 @@ def performance_polygon_vs_player(PlayersName):
         plt.ylim(0,maxi)
         """
     plt.ylim(0,10)
-    for i in range(len(properties)):
-        angle_rad = i/float(len(properties))*2*np.pi
-        angle_deg = i/float(len(properties))*360
+    for i in range(len(criterias)):
+        angle_rad = i/float(len(criterias))*2*np.pi
+        angle_deg = i/float(len(criterias))*360
         ha = "right"
         if angle_rad < np.pi/2 or angle_rad > 3*np.pi/2: ha = "left"
-        plt.text(angle_rad, 10.75, properties[i], size=14,
+        plt.text(angle_rad, 10.75, criterias[i], size=14,
                  horizontalalignment=ha, verticalalignment="center")
 
     plt.title("Performance polygon", pad = 50)
+    plt.savefig("polygone")
     plt.show()
 
 
-PlayerName= "Jerian Grant"
-#PlayerName5= "Buddy Hield"
-PlayerName6="Thabo Sefolosha"
-#performance_polygon(PlayerName)
-PlayerName3 = "Mikal Bridges"
-PlayerName4 = "Cedi Osman"
-
-
 list_of_player = ["Cody Zeller", "Willie Cauley-Stein", "Nerlens Noel", "Taj Gibson", "Ian Mahinmi"]
-list_of_player2 = ["Gordon Hayward", "Khris Middleton"]
-list_of_player3 = ["Victor Oladipo", "Jayson Tatum"]
-performance_polygon_vs_player(list_of_player)
+properties = ['OWS', 'DWS', 'AST','TS%', "TRB", "PTS", "3PA" ]
+#performance_polygon_vs_player(list_of_player, properties)

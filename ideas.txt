@@ -1,31 +1,18 @@
 ******************FEATURES**********************************
-
-=> feature: retravailler la défense/attaque => pertinence OWS/DWS
-=> Changer 3PA en 3PM? 
-=> Ajouter Minute played? 
- => rajouter FT%? 
- => Rajouter Taille
  => Filtrer non pas sur le nb de match joué mais sur la proportion de match raté
-
 ************************************************************
-
-
 
 ********************** Algo Clustered **********************
-=> faire du fcm direct sur les donnes sans DBSCAN? 
-=> augmenter le nb d'elements max par cluster pour fcm? 
-=> FAIRE UNE MATRICE DE DISSIMILARITÉ ENTRE CHAQUE JOUEUR
-=> FAIRE K MEANS POUR TOUS LES JOUEURS (RESTANTS ou non) 
+=> FAIRE UNE MATRICE DE DISSIMILARITÉ ENTRE CHAQUE JOUEUR => done
 
 ************************************************************
 
+*******************MATRICE DE SIMILARITÉ*****************************
 
-*****************************Qualité d'un cluster ***********
+-> pouvoir ressortir le score de similarité de seulement certains joeurs => mini matrice
+-> pouvoir paramétrer sur les col qu'on veut utiliser pour afficher les polygones
 
-=> ENLEVER LES N% (20% de manière empirique) PLUS MAUVAIS CLUSTERS (EN TERME DE DISTANCE MOYENNE ENTRE LES JOUEURS) 
-=> DUNN, SILHOUETTE
-=> Max 3 joueurs dans un cluster
-***************************************************************
+************************************************************
 
 ********web app*********************************************
 

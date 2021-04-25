@@ -24,8 +24,6 @@ nb_max_players_per_cluster_fcm: 3
 => MIEUX
 
 
-
-
 TEST 3:
 
 PCA: 0.85
@@ -461,3 +459,367 @@ NB Joueurs clusterisées au total: 240
 
 Nb de Foireux => 16 => 20 %
 
+
+EST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 40
+nb_max_players_per_cluster_fcm: 5
+
+NB Joueurs a clusteriser: 339
+NB Joueurs clusterisées au total: 200
+
+Nb de Foireux => 16 => 40%
+
+
+=>trop de joueur par cluster
+
+
+***** APRES AVOIR LOUPE DES JOUEURS A CAUSE DES NOMS AUX CONVENTIONS DIFFERENTES  dans le df HEIGHTS******
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 80
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 317
+NB Joueurs clusterisées au total: 240
+
+Nb de Foireux => 26 => 32%
+
+
+=>Mieux qu'avant! => peut être a t-on enlever des outliers? 
+
+
+
+************************** Avec Height ************************************
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb de Foireux => 7 => 14%
+
+=> ENcore mieux!!
+
+
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 60
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 180
+
+Nb de Foireux => 12 => 20%
+
+=> Moins bien => le précedent est mieux
+
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 4
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 200
+
+Nb de Foireux => 12 => 24% => moins bien que celui avec 50 clusters de 3 joueurs
+
+
+
+
+************************* en utilisant 3PM au lieu de 3PA ***************************
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb de Foireux => 10 => 20%
+
+=> Moins bien qu'avec 3PA
+
+
+*************************** en utilisant TRB% au lieu de TRB ************************
+
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb de Foireux => 11 => 22%
+
+=> Moins bien qu'avec TRB
+
+
+*************************** en utilisant BLK et INT au lieu de DWS (3PA) ************************
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb de Foireux => 11 => 22 %  
+
+=> Aussi bien qu'avec DWS => a voir 
+
+
+
+
+****************************** en utilisant le pca *************************************
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+PCA: 0.85
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb de Foireux => 13 => 26%
+
+=> Moins bien que sans le pca
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+PCA: 0.9
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb de Foireux => 13 => 26%
+
+=> Moins bien que sans le PCA
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+PCA: 0.75
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb Foireux => 14 =>28%
+
+=> Moins bien que sans le pca
+
+
+********************************* en utilisant 3PA rate au lieu de 3PA **********************
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb Foireux => 9 => 18%
+
+=> un peu moins bien qu'avec le 3PA
+
+********************************* DWS, 3PAR **********************
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb Foireux => 9 => 18%
+
+=> un peu moins bien
+
+
+*********************** "BLK", "STL", '3PAr', **************************
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 336
+NB Joueurs clusterisées au total: 150
+
+Nb Foireux => 12 => 24 %
+
+=> Moins bien
+
+
+
+======>  JUSQUICI LE MIEUX C'EST 3PA + hEIGHT + DWS =====================
+
+
+
+************************* avec seulement les 3 dernieres saisons *********
+
+
+TEST:
+
+Fuzzyfier : 1.1
+Nb Cluster Fuzzy: 50
+nb_max_players_per_cluster_fcm: 3
+
+NB Joueurs a clusteriser: 319
+NB Joueurs clusterisées au total: 150
+
+Nb Foireux => 13 => 26%
+
+
+=> Moins bien qu'avec les 5 dernieres saisons
+
+********************** MATRICE DE DISSIMILARITE ******************************
+
+AVEC INT/BLK: 
+
+Josh Jackson : [('Rudy Gay', 0.316), ('Markieff Morris', 0.337), ('Alec Burks', 0.339), ('Mario Hezonja', 0.366), ('Kent Bazemore', 0.369)]
+
+AVEC DWS:
+
+Josh Jackson : [('Alec Burks', 0.26), ('Markieff Morris', 0.279), ('Brandon Ingram', 0.284), ('Dillon Brooks', 0.288), ('Jabari Parker', 0.3)]
+
+AVEC INT/BLK
+
+Trae Young : [('Kyrie Irving', 0.394), ('Isaiah Thomas', 0.427), ('Kemba Walker', 0.448), ('Lou Williams', 0.451), ("D'Angelo Russell", 0.471)]
+
+AVEC DWS
+
+Trae Young : [('Isaiah Thomas', 0.444), ('Lou Williams', 0.455), ("D'Angelo Russell", 0.463), ('Kyrie Irving', 0.466), ('JJ Barea', 0.478)]
+
+AVEC INT/BLK
+
+
+Jamal Murray : [('Bogdan Bogdanovic', 0.211), ('Jordan Clarkson', 0.213), ('Evan Fournier', 0.226), ('Zach LaVine', 0.226), ('Will Barton', 0.233)]
+
+AVEC DWS
+
+Jamal Murray : [('Bogdan Bogdanovic', 0.185), ('Evan Fournier', 0.216), ('Will Barton', 0.227), ('Caris LeVert', 0.228), ('Zach LaVine', 0.233)]
+
+
+AVEC INT/BLK
+
+Ben Simmons : [('Draymond Green', 0.516), ('Nikola Jokic', 0.525), ('Elfrid Payton', 0.562), ('Jimmy Butler', 0.578), ('Mason Plumlee', 0.593)]
+
+AVEC DWS
+
+
+Ben Simmons : [('Draymond Green', 0.497), ('Al Horford', 0.523), ('Nikola Jokic', 0.529), ('Bam Adebayo', 0.534), ('Marc Gasol', 0.588)]
+
+
+AVEC INT/BLK
+Harrison Barnes : [('Marcus Morris', 0.123), ('Jeff Green', 0.186), ('Bojan Bogdanovic', 0.197), ('Tobias Harris', 0.214), ('Rodney Hood', 0.257)]
+
+AVEC DWS
+
+Harrison Barnes : [('Marcus Morris', 0.151), ('Tobias Harris', 0.183), ('Jeff Green', 0.185), ('TJ Warren', 0.196), ('Bojan Bogdanovic', 0.202)]
+
+
+AVEC INT/BLK
+
+Russell Westbrook : [('LeBron James', 0.514), ('Luka Doncic', 0.564), ('Chris Paul', 0.584), ('Trae Young', 0.614), ('Kyrie Irving', 0.636)]
+
+
+AVEC DWS
+Russell Westbrook : [('LeBron James', 0.48), ('Luka Doncic', 0.552), ('Chris Paul', 0.631), ('Giannis Antetokounmpo', 0.71), ('Kyrie Irving', 0.714)]
+
+
+AVEC INT/BLK
+
+Ryan Anderson : [('Joe Harris', 0.261), ('Georges Niang', 0.267), ('Davis Bertans', 0.272), ('Mike Scott', 0.275), ('Marcus Morris', 0.276)]
+
+AVEC DWS
+Ryan Anderson : [('Davis Bertans', 0.208), ('Joe Harris', 0.246), ('Bojan Bogdanovic', 0.256), ('DeMarre Carroll', 0.256), ('Ersan Ilyasova', 0.259)]
+
+AVEC INT/BLK
+Derrick Favors : [('Richaun Holmes', 0.17), ('Cody Zeller', 0.25), ('Steven Adams', 0.257), ('Deandre Ayton', 0.265), ('Daniel Theis', 0.271)]
+
+AVEC DWS
+Derrick Favors : [('Jarrett Allen', 0.221), ('Steven Adams', 0.227), ('Bam Adebayo', 0.261), ('Clint Capela', 0.263), ('Domantas Sabonis', 0.269)]
+
+AVEC INT/BLK
+Rondae Hollis-Jefferson : [('Thaddeus Young', 0.282), ('Michael Kidd-Gilchrist', 0.303), ('Troy Brown', 0.308), ('Larry Nance', 0.318), ('David Nwaba', 0.32)]
+
+AVEC DWS
+
+Rondae Hollis-Jefferson : [('John Henson', 0.249), ('Daniel Theis', 0.264), ('Michael Kidd-Gilchrist', 0.268), ('Thaddeus Young', 0.271), ('Gorgui Dieng', 0.278)]
+
+
+AVEC INT/BLK
+Paul Millsap : [('Rudy Gay', 0.254), ('Jayson Tatum', 0.283), ('Pascal Siakam', 0.31), ('Marquese Chriss', 0.35), ('James Johnson', 0.356)]
+
+
+AVEC DWS
+
+Paul Millsap : [('Pascal Siakam', 0.216), ('Jayson Tatum', 0.246), ('Aaron Gordon', 0.272), ('Al Horford', 0.277), ('Thaddeus Young', 0.3)]
+
+
+AVEC INT/BLK
+
+Jayson Tatum : [('Rudy Gay', 0.174), ('Jeremy Lamb', 0.212), ('Tobias Harris', 0.259), ('Jaylen Brown', 0.261), ('Pascal Siakam', 0.274)]
+
+AVEC DWS
+Jayson Tatum : [('Paul Millsap', 0.246), ('Brook Lopez', 0.278), ('Gordon Hayward', 0.289), ('Pascal Siakam', 0.289), ('Khris Middleton', 0.326)]
+
+AVEC INT/BLK
+Montrezl Harrell : [('Derrick Favors', 0.314), ('John Collins', 0.319), ('LaMarcus Aldridge', 0.331), ('Deandre Ayton', 0.372), ('Richaun Holmes', 0.389)]
+
+AVEC DWS
+
+Montrezl Harrell : [('John Collins', 0.304), ('Julius Randle', 0.342), ('TJ Warren', 0.349), ('Deandre Ayton', 0.361), ('Jahlil Okafor', 0.373)]
+
+AVEC INT/BLK
+
+AVEC DWS
+
+
+AVEC INT/BLK
+
+AVEC DWS
+
+
+AVEC INT/BLK
+
+AVEC DWS

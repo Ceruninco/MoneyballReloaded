@@ -1,14 +1,17 @@
+import pandas as pd
+import re
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import pandas as pd
+from unidecode import unidecode
+
 
 # Setting the driver
 
 #Pour Firefox Linux
-#driver = webdriver.Firefox(executable_path="./geckodriver")
+driver = webdriver.Firefox(executable_path="./geckodriver")
 
 #Pour Google Chrome Windows. Il faut installer cependant chromedrive: https://sites.google.com/a/chromium.org/chromedriver/downloads
-driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chromedriver_win32\chromedriver.exe")
+#driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chromedriver_win32\chromedriver.exe")
 
 # get the content of the html page
 driver.get("https://basketballnoise.com/nba-players-height-2019-2020/")
@@ -30,14 +33,16 @@ for tbody in div.findAll('tbody'):
         '''if (len(tds) == 3):
                 value = str(tds[0].text)'''
         def_ratings[name] = value
-    
-def_ratings.pop('Name', None)
-def_ratings.pop(str('Name '), None)
-def_ratings.pop('', None)
+        
+clean_dict = {key: value for key, value in def_ratings.items() if re.match('^\d[\',.,’]\d+$', value)}
 
-df = pd.DataFrame(list(def_ratings.items()),columns = ['Name','Height (ft)'])
+#transform to df
+df = pd.DataFrame(list(clean_dict.items()),columns = ['Name','Height (ft)'])
 df['Height (ft)'] = df['Height (ft)'].str.replace('’','.')
 df['Height (cm)'] = pd.to_numeric(df['Height (ft)'].str.split('.').str[0])*30.48+pd.to_numeric(df['Height (ft)'].str.split('.').str[1])*2.54
+df['Height (cm)'] = df['Height (cm)'].apply(round, args=[2])
+
+print("Script to gather players height in cm is done.")
 
 path="../csv/players_height.csv"
 df.to_csv(path)
