@@ -96,6 +96,7 @@ def get_most_similar_players(player_name, nb_of_similar_players_wanted, dist_mat
 
 def plot_heat_matrix(only_number_matrix, list_of_players):
     #lets try to plot a heat matrix
+    fig = plt.figure()
     c = plt.imshow(only_number_matrix, cmap='Reds', interpolation='nearest')
     plt.title("Similarity of players")
     plt.colorbar(c)
@@ -103,41 +104,33 @@ def plot_heat_matrix(only_number_matrix, list_of_players):
     plt.xticks(np.arange(0, len(list_of_players)) , list_of_players, rotation=270)
     plt.yticks(np.arange(0, len(list_of_players)) , list_of_players)
     plt.show()
+    return fig
     
     
-    
-    
-
 source = pd.read_csv('../csv/players_stats.csv')
 criterias = ['TRB', 'PTS', 'AST', 'DWS', '3PA', "OWS", "USG%", "Height"]
-
-#computing_distance_matrix(source, criterias)
 
 #retrieving the data
 dist_mat = pd.read_csv("../csv/distance_matrix.csv")        
 dist_mat = dist_mat.rename(columns={"Unnamed: 0": 'Name'})
 
-# lets get the distance between those players
-list_of_players = ["LeBron James", "Kyrie Irving", "Steven Adams", "Stephen Curry"]
-players_distances = get_distance_between_players(list_of_players, dist_mat)
+# get the n most similar player to X and get the similarity values between each and every one of them
+player = "Bradley Beal"
+most_similar_players = get_most_similar_players(player, 4, dist_mat)
+most_similar_players_names = [names for (names, score) in most_similar_players ]
+
+players_distances = get_distance_between_players(most_similar_players_names, dist_mat)
 only_number_matrix = [list(value.values()) for key, value in players_distances.items()]
 
 # plot the heat matrix of several players
-plot_heat_matrix(only_number_matrix, list_of_players)
+plot_heat_matrix(only_number_matrix, most_similar_players_names)
 
-# get the n most similar player to X, pass True if you want to plot
-player = "Nikola Jokic"
-most_similar_players = get_most_similar_players(player, 4, dist_mat)
-
-most_similar_players_names = [names for (names, score) in most_similar_players ]
-
-
-
-# polygones
+# draw polygones
 players_to_draw = [player[0] for player in most_similar_players]
 players_to_draw.append(player)
-performance_polygon_vs_player(players_to_draw, criterias)
-
+properties = ['OWS', 'DWS', 'AST','TS%', "TRB", "PTS", "3PA" ]
+performance_polygon_vs_player(players_to_draw, properties)
+    
 
 # ignore warnings for the polygone display
 warnings.filterwarnings("ignore")

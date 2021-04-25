@@ -129,6 +129,7 @@ def performance_polygon_vs_player(PlayersName, criterias):
     plt.title("Performance polygon", pad = 50)
     plt.savefig("polygone")
     plt.show()
+    return fig
 
 
 list_of_player = ["Cody Zeller", "Willie Cauley-Stein", "Nerlens Noel", "Taj Gibson", "Ian Mahinmi"]
