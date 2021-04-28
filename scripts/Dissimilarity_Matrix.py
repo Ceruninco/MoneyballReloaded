@@ -95,6 +95,7 @@ def get_most_similar_players(player_name, nb_of_similar_players_wanted, dist_mat
 
 
 def plot_heat_matrix(only_number_matrix, list_of_players):
+    list_of_players = sorted(list_of_players)
     #lets try to plot a heat matrix
     fig = plt.figure()
     c = plt.imshow(only_number_matrix, cmap='Reds', interpolation='nearest')

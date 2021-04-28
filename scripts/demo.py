@@ -67,18 +67,18 @@ polygones.savefig("polygones.jpg")
 
 # Display
 st.table(df_most_similar_players)
-#st.write(heat_matrix)
-#st.write(polygones)
+st.write(heat_matrix)
+st.write(polygones)
 
 
-heat_matrix_image = mpimg.imread('heat_matrix.jpg')
-polygones_image = mpimg.imread("polygones.jpg")
+# heat_matrix_image = mpimg.imread('heat_matrix.jpg')
+# polygones_image = mpimg.imread("polygones.jpg")
 
-col1, col2 = st.beta_columns(2)
+# col1, col2 = st.beta_columns(2)
 
-col1.header("Polygones")
-col1.image(polygones_image, use_column_width=True)
+# col1.header("Polygones")
+# col1.image(polygones_image, use_column_width=True)
 
-col2.header("Heat Matrix")
-col2.image(heat_matrix_image, use_column_width=True)
+# col2.header("Heat Matrix")
+# col2.image(heat_matrix_image, use_column_width=True)
 
