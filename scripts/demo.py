@@ -64,6 +64,8 @@ st.table(df_most_similar_players)
 st.write(heat_matrix)
 st.write(polygones)
 
+st.markdown("____")
+
 
 # heat_matrix_image = mpimg.imread('heat_matrix.jpg')
 # polygones_image = mpimg.imread("polygones.jpg")
