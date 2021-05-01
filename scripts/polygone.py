@@ -76,7 +76,8 @@ def performance_polygon_vs_player(PlayersName, criterias):
     #properties = ['Offensive Win share', 'Defensive win share', 'AST','TS%', "TRB", "PTS", "3PA" ]
     values = np.random.uniform(5,9,len(criterias))
     colors = ["blue", "red", "green", "orange", "brown", "deeppink","sienna",
-              "gold", "olivedrab", "mediumspringgreen", "navy", "plum", "cadetblue", "darkmagenta"]
+              "gold", "olivedrab", "mediumspringgreen", "navy", "plum", "cadetblue", "darkmagenta"
+              , "black"]
     fig = plt.figure(figsize=(10,8), facecolor='white')
     for i in range (0,len(PlayersName)):
         Player=10*NormalizeData[NormalizeData.Player.eq(PlayersName[i])]

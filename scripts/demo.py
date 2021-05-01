@@ -13,14 +13,11 @@ import pandas as pd
 import numpy as np
 from Dissimilarity_Matrix import get_most_similar_players, plot_heat_matrix, get_distance_between_players
 from polygone import performance_polygon_vs_player
-import matplotlib.image as mpimg
 
 stats = pd.read_csv("../csv/players_stats.csv")
 dist_mat = pd.read_csv("../csv/distance_matrix.csv")
 dist_mat = dist_mat.rename(columns={"Unnamed: 0": 'Name'})
 criterias = ['OWS', 'DWS', 'AST','TS%', "TRB", "PTS", "3PA" ]
-
-
 
 st.title('MoneyBall Reloaded')
 
@@ -28,13 +25,9 @@ player = st.selectbox(
     'Which player do you want to find similar players to?',
      stats['Player'])
 
-'You selected: ', player
-
 number = st.selectbox(
     'How many players do you want among the most similar?',
      np.arange(1, 10, 1))
-
-'You selected:', number
 
 
 # get the n most similar to the required player
@@ -42,6 +35,7 @@ most_similar_players = get_most_similar_players(player, number, dist_mat)
 most_similar_players_names = [names for (names, score) in most_similar_players ]
 
 most_similar_players_names.append(player)
+
 
 # get the distance between the n most similar players of the required player
 players_distances = get_distance_between_players(most_similar_players_names, dist_mat)
@@ -81,4 +75,37 @@ st.write(polygones)
 
 # col2.header("Heat Matrix")
 # col2.image(heat_matrix_image, use_column_width=True)
+
+st.write("Compare the players you want together")
+
+nb_of_player_to_compare = st.selectbox(
+    'How many players do you want to individually compare to each other?',
+     np.arange(1, 10, 1))
+
+players_list = []
+
+for i in range(nb_of_player_to_compare):
+    player_picked = st.selectbox(
+    'Which player do you want to find similar players to?',
+     stats['Player'], key=i)
+    players_list.append(player_picked)
+    
+
+# get the distance between the players selected
+players_distances = get_distance_between_players(players_list, dist_mat)
+only_number_matrix = [list(value.values()) for key, value in players_distances.items()]
+
+# get the heat matrix of the selected players
+heat_matrix = plot_heat_matrix(only_number_matrix, players_list)
+
+# draw polygones for the selected players
+polygones = performance_polygon_vs_player(players_list, criterias)
+
+heat_matrix.savefig("heat_matrix.jpg")
+polygones.savefig("polygones.jpg")
+
+
+# Display
+st.write(polygones)
+st.write(heat_matrix)
 
